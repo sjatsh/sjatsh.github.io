@@ -184,12 +184,12 @@
     <link href="/2019/09/17/2018-02-01-win_ics/"/>
     <id>/2019/09/17/2018-02-01-win_ics/</id>
     <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2020-01-03T09:27:40.023Z</updated>
+    <updated>2020-01-03T09:35:48.594Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;title: “windows ICS”&lt;br&gt;description: “”&lt;br&gt;tags: “windows”&lt;br&gt;date: “2018-02-01”&lt;/p&gt;
+&lt;p&gt;layout: post&lt;br&gt;title: “windows ICS”&lt;br&gt;description: “”&lt;br&gt;tags: “windows”&lt;br&gt;date: “2018-02-01”&lt;/p&gt;
 &lt;h2 id=&quot;categories-“system”&quot;&gt;&lt;a href=&quot;#categories-“system”&quot; class=&quot;headerlink&quot; title=&quot;categories: “system”&quot;&gt;&lt;/a&gt;categories: “system”&lt;/h2&gt;&lt;h3 id=&quot;什么是windows-ICS&quot;&gt;&lt;a href=&quot;#什么是windows-ICS&quot; class=&quot;headerlink&quot; title=&quot;什么是windows ICS&quot;&gt;&lt;/a&gt;什么是windows ICS&lt;/h3&gt;&lt;p&gt;全称windows internet connect sharing,用于在电脑两个网卡之间共享网络，让windows主机成实现一个&lt;br&gt;简单的路由功能。&lt;/p&gt;
     
     </summary>
@@ -443,22 +443,22 @@
   </entry>
   
   <entry>
-    <title>mysql8.0.11精简版</title>
-    <link href="/2018/04/20/2018-04-20-mysql_8011/"/>
-    <id>/2018/04/20/2018-04-20-mysql_8011/</id>
+    <title>Java 内存可见性与指令重排</title>
+    <link href="/2018/04/20/2018-04-20-java_volatile/"/>
+    <id>/2018/04/20/2018-04-20-java_volatile/</id>
     <published>2018-04-19T16:00:00.000Z</published>
-    <updated>2020-01-03T09:35:02.396Z</updated>
+    <updated>2020-01-03T09:35:02.346Z</updated>
     
     <summary type="html">
     
-      mysql8.0.11精简版
+      Java 内存可见性与指令重排
     
     </summary>
     
-      <category term="db" scheme="/categories/db/"/>
+      <category term="java" scheme="/categories/java/"/>
     
     
-      <category term="mysql" scheme="/tags/mysql/"/>
+      <category term="volatile" scheme="/tags/volatile/"/>
     
   </entry>
   
