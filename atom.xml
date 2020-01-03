@@ -125,12 +125,12 @@
     <link href="/2019/09/17/2018-04-25-java_classloader/"/>
     <id>/2019/09/17/2018-04-25-java_classloader/</id>
     <published>2019-09-17T13:17:33.000Z</published>
-    <updated>2020-01-03T09:55:50.150Z</updated>
+    <updated>2020-01-03T10:12:29.136Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;layout: post&lt;br&gt;title: “Java类加载器”&lt;br&gt;description: “Java类加载器”&lt;br&gt;tag: “classloader”&lt;br&gt;date: “2018-04-25 00:00:00 +0800”&lt;/p&gt;
+&lt;p&gt;layout: post&lt;br&gt;title: “Java类加载器”&lt;br&gt;tag: “classloader”&lt;br&gt;date: “2018-04-25 00:00:00 +0800”&lt;/p&gt;
 &lt;h2 id=&quot;categories-“java”&quot;&gt;&lt;a href=&quot;#categories-“java”&quot; class=&quot;headerlink&quot; title=&quot;categories: “java”&quot;&gt;&lt;/a&gt;categories: “java”&lt;/h2&gt;&lt;h3 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h3&gt;&lt;p&gt;最初为了满足Java Applet的需要而被开发出来的，Java Applet 需要从远程下载Java类到浏览器执行，现在Web容器和OSGi中得到了广泛的使用。类加载器负责读取 Java 字节代码，并转换&lt;br&gt;成 java.lang.Class 类的实例。每个 java.lang.Class 实例用来表示一个Java类，通过 newInstance() 创建该类对象，newInstance()只能调用无参构造器。&lt;br&gt;
     
     </summary>
@@ -143,12 +143,12 @@
     <link href="/2019/09/17/2018-02-01-win_ics/"/>
     <id>/2019/09/17/2018-02-01-win_ics/</id>
     <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2020-01-03T09:55:50.209Z</updated>
+    <updated>2020-01-03T10:12:29.172Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;layout: post&lt;br&gt;title: “windows ICS”&lt;br&gt;description: “”&lt;br&gt;tag: “windows”&lt;br&gt;date: “2018-02-01 00:00:00 +0800”&lt;/p&gt;
+&lt;p&gt;layout: post&lt;br&gt;title: “windows ICS”&lt;br&gt;tag: “windows”&lt;br&gt;date: “2018-02-01 00:00:00 +0800”&lt;/p&gt;
 &lt;h2 id=&quot;categories-“system”&quot;&gt;&lt;a href=&quot;#categories-“system”&quot; class=&quot;headerlink&quot; title=&quot;categories: “system”&quot;&gt;&lt;/a&gt;categories: “system”&lt;/h2&gt;&lt;h3 id=&quot;什么是windows-ICS&quot;&gt;&lt;a href=&quot;#什么是windows-ICS&quot; class=&quot;headerlink&quot; title=&quot;什么是windows ICS&quot;&gt;&lt;/a&gt;什么是windows ICS&lt;/h3&gt;&lt;p&gt;全称windows internet connect sharing,用于在电脑两个网卡之间共享网络，让windows主机成实现一个&lt;br&gt;简单的路由功能。&lt;/p&gt;
     
     </summary>
@@ -261,7 +261,7 @@
     <link href="/2018/08/19/2018-08-19-permutation_algorithms/"/>
     <id>/2018/08/19/2018-08-19-permutation_algorithms/</id>
     <published>2018-08-18T18:00:00.000Z</published>
-    <updated>2020-01-03T09:55:50.223Z</updated>
+    <updated>2020-01-03T10:12:29.179Z</updated>
     
     <summary type="html">
     
@@ -281,7 +281,7 @@
     <link href="/2018/08/19/2018-08-1-quick_sort/"/>
     <id>/2018/08/19/2018-08-1-quick_sort/</id>
     <published>2018-08-18T17:30:00.000Z</published>
-    <updated>2020-01-03T09:55:50.253Z</updated>
+    <updated>2020-01-03T10:12:29.197Z</updated>
     
     <summary type="html">
     
@@ -319,7 +319,7 @@
     <link href="/2018/08/18/2018-08-18-shell_sort/"/>
     <id>/2018/08/18/2018-08-18-shell_sort/</id>
     <published>2018-08-18T12:24:00.000Z</published>
-    <updated>2020-01-03T09:55:50.263Z</updated>
+    <updated>2020-01-03T10:12:29.200Z</updated>
     
     <summary type="html">
     
@@ -343,7 +343,7 @@
     <link href="/2018/08/17/2018-08-17-insertion_sort/"/>
     <id>/2018/08/17/2018-08-17-insertion_sort/</id>
     <published>2018-08-17T06:30:00.000Z</published>
-    <updated>2020-01-03T09:55:50.175Z</updated>
+    <updated>2020-01-03T10:12:29.148Z</updated>
     
     <summary type="html">
     
@@ -386,11 +386,12 @@
     <link href="/2018/07/16/2018-07-16-http_idempotence/"/>
     <id>/2018/07/16/2018-07-16-http_idempotence/</id>
     <published>2018-07-15T16:00:00.000Z</published>
-    <updated>2020-01-03T09:55:50.302Z</updated>
+    <updated>2020-01-03T10:12:29.228Z</updated>
     
     <summary type="html">
     
-      HTTP幂等性
+      &lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/weidagang2046/archive/2011/06/04/idempotence.html&quot; target=&quot;_blank&quot;&gt;原文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;HTTP协议是一种分布式的面向资源的网络应用层协议，Web API如此流行很大程度上应归功于简单有效的HTTP协议。然而，正如简单的Java语言并不意味着高质量的Java程序，&lt;br&gt;简单的HTTP协议也不意味着高质量的Web API。要想设计出高质量的Web API，还需要深入理解分布式系统及HTTP协议的特性。&lt;/p&gt;
     
     </summary>
     
@@ -402,35 +403,15 @@
   </entry>
   
   <entry>
-    <title>mysql8.0.11精简版</title>
-    <link href="/2018/04/20/2018-04-20-mysql_8011/"/>
-    <id>/2018/04/20/2018-04-20-mysql_8011/</id>
-    <published>2018-04-19T16:00:00.000Z</published>
-    <updated>2020-01-03T09:55:50.228Z</updated>
-    
-    <summary type="html">
-    
-      mysql8.0.11精简版
-    
-    </summary>
-    
-      <category term="db" scheme="/categories/db/"/>
-    
-    
-      <category term="mysql" scheme="/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Java 内存可见性与指令重排</title>
     <link href="/2018/04/20/2018-04-20-java_volatile/"/>
     <id>/2018/04/20/2018-04-20-java_volatile/</id>
     <published>2018-04-19T16:00:00.000Z</published>
-    <updated>2020-01-03T10:08:01.052Z</updated>
+    <updated>2020-01-03T10:12:29.143Z</updated>
     
     <summary type="html">
     
-      Java 内存可见性与指令重排
+      &lt;h3 id=&quot;内存可见性的问题&quot;&gt;&lt;a href=&quot;#内存可见性的问题&quot; class=&quot;headerlink&quot; title=&quot;内存可见性的问题&quot;&gt;&lt;/a&gt;内存可见性的问题&lt;/h3&gt;&lt;p&gt;多线程系统中共享变量在主存，线程保存一份变量的副本，某个线程对共享变量的改动通过改动变量副本然后同步到主存中的共享变量，但是其他线程保存的可能还是之前的变量副本，此时可能&lt;br&gt;就会存在问题。  &lt;/p&gt;
     
     </summary>
     
@@ -438,6 +419,32 @@
     
     
       <category term="volatile" scheme="/tags/volatile/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql8.0.11精简版</title>
+    <link href="/2018/04/20/2018-04-20-mysql_8011/"/>
+    <id>/2018/04/20/2018-04-20-mysql_8011/</id>
+    <published>2018-04-19T16:00:00.000Z</published>
+    <updated>2020-01-03T10:12:29.182Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;mysql8-0-11精简版&quot;&gt;&lt;a href=&quot;#mysql8-0-11精简版&quot; class=&quot;headerlink&quot; title=&quot;mysql8.0.11精简版&quot;&gt;&lt;/a&gt;mysql8.0.11精简版&lt;/h3&gt;&lt;p&gt;仅供学习交流：&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="db" scheme="/categories/db/"/>
+    
+    
+      <category term="mysql" scheme="/tags/mysql/"/>
     
   </entry>
   
