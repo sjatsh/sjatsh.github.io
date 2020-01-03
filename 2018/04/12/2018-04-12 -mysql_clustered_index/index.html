@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">SunJun</title>
+  <title itemprop="name">mysql clustered index | SunJun</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -371,16 +371,14 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
           <header class="entry-header">
-            <h1 class="entry-title"></h1>
-            <p class="entry-census">&nbsp;·&nbsp;2019-9-17&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
+            <h1 class="entry-title">mysql clustered index</h1>
+            <p class="entry-census">&nbsp;·&nbsp;2018-4-12&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
 
             <hr>
           </header>
         
         <div class="entry-content">
-          <hr>
-<p>layout: post<br>title: “mysql clustered index”<br>description: “mysql聚集索引”<br>tag: “mysql”<br>date: “2018-04-12 00:00:00 +0800”</p>
-<h2 id="categories-“db”"><a href="#categories-“db”" class="headerlink" title="categories: “db”"></a>categories: “db”</h2><h3 id="mysql聚集索引的理解"><a href="#mysql聚集索引的理解" class="headerlink" title="mysql聚集索引的理解"></a>mysql聚集索引的理解</h3><p>InnoDB使用聚集索引存储数据，到底什么是聚集索引，聚集索引直接定义了表中数据的真实的物理存储顺序。<strong>聚集索引就像一个电话簿，按照姓氏排序，<br>并且电话号码紧跟着后面</strong>。一个表有且只有一个聚集索引，默认主键作为聚集索引，没有主键则以第一个唯一非空键作为聚集索引，如果也没有则InnoDB<br>会生成一个隐藏id作为聚集索引。  </p>
+          <h3 id="mysql聚集索引的理解"><a href="#mysql聚集索引的理解" class="headerlink" title="mysql聚集索引的理解"></a>mysql聚集索引的理解</h3><p>InnoDB使用聚集索引存储数据，到底什么是聚集索引，聚集索引直接定义了表中数据的真实的物理存储顺序。<strong>聚集索引就像一个电话簿，按照姓氏排序，<br>并且电话号码紧跟着后面</strong>。一个表有且只有一个聚集索引，默认主键作为聚集索引，没有主键则以第一个唯一非空键作为聚集索引，如果也没有则InnoDB<br>会生成一个隐藏id作为聚集索引。  </p>
 <a id="more"></a>
 <p>注：聚集索引中的每个叶子节点包含<strong>主键值、事务ID、回滚指针(rollback pointer用于事务和MVCC)和余下的列</strong></p>
 <h3 id="聚集索引的优缺点"><a href="#聚集索引的优缺点" class="headerlink" title="聚集索引的优缺点"></a>聚集索引的优缺点</h3><p>优点：</p>
@@ -427,7 +425,7 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2019/09/17/2019-09-17-graceful-reload/" rel="prev">
+            <a href="/2018/04/13/2018-04-13-mysql_tow_phase_commit/" rel="prev">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/sjatsh/cdn@master/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
               </div>
@@ -435,7 +433,7 @@
               Previous Post</span>
               <div class="info">
                 <h3>
-                go平滑重启选型和项目实践</h3>
+                mysql bin/redo log顺序一致性问题</h3>
                 <hr>
               </div>
             </a>
@@ -445,7 +443,7 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2019/09/17/2018-04-25-java_classloader/" rel="next">
+            <a href="/2018/04/12/2018-04-12-mysql_undo_log_mvcc/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/sjatsh/cdn@master/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
               </div>
@@ -453,7 +451,7 @@
               Next Post</span>
               <div class="info">
                 <h3>
-                </h3>
+                mysql undo log与MVCC的实现原理</h3>
                 <hr>
               </div>
             </a>
