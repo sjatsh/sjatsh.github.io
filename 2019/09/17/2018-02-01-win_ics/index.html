@@ -378,8 +378,9 @@
           </header>
         
         <div class="entry-content">
-          <p>+++<br>title = “windows ICS”<br>description = “”<br>tags = [<br>    “windows”,<br>]<br>date = “2018-02-01”<br>categories = [<br>  “system”,<br>]<br>+++ </p>
-<h3 id="什么是windows-ICS"><a href="#什么是windows-ICS" class="headerlink" title="什么是windows ICS"></a>什么是windows ICS</h3><p>全称windows internet connect sharing,用于在电脑两个网卡之间共享网络，让windows主机成实现一个<br>简单的路由功能。</p>
+          <hr>
+<p>title: “windows ICS”<br>description: “”<br>tags: [<br>    “windows”,<br>]<br>date: “2018-02-01”<br>categories: [<br>  “system”,</p>
+<h2 id><a href="#" class="headerlink" title="]"></a>]</h2><h3 id="什么是windows-ICS"><a href="#什么是windows-ICS" class="headerlink" title="什么是windows ICS"></a>什么是windows ICS</h3><p>全称windows internet connect sharing,用于在电脑两个网卡之间共享网络，让windows主机成实现一个<br>简单的路由功能。</p>
 <a id="more"></a>
 <h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>在更改适配器选项中选择连接外网的网卡右键属性，选择共享，选择允许其他用户通过此计算机的internet连接来<br>连接并选择需要共享的网卡。默认被共享的网卡（后面称LAN口）ip是192.168.137.1，电脑接上该网口后会自动分配一个192.168.137<br>段的ip。</p>
 <h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><p>如果我们修改LAN口ip后会发现，连接lan口的设备获取的ip不是LAN口的ip段。</p>
@@ -416,7 +417,7 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2019/09/17/2018-02-01-ubuntu_nat/" rel="prev">
+            <a href="/2019/09/17/2017-07-10-qiniu_upload/" rel="prev">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/sjatsh/cdn@master/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
               </div>
@@ -434,7 +435,7 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2019/09/17/2018-04-03-pass_by_value_and_reference/" rel="next">
+            <a href="/2019/09/17/2018-10-09-sputnik/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/sjatsh/cdn@master/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
               </div>
@@ -488,7 +489,7 @@
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -500,10 +501,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            // PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',

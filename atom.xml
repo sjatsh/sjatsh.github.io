@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-11-27T03:20:12.000Z</updated>
+  <updated>2019-11-04T12:44:57.000Z</updated>
   <id>/</id>
   
   <author>
@@ -15,59 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="/2019/11/27/2016-10-14-select_sort/"/>
-    <id>/2019/11/27/2016-10-14-select_sort/</id>
-    <published>2019-11-27T03:20:12.000Z</published>
-    <updated>2019-11-27T03:20:12.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;+++&lt;br&gt;title = “突破算法之-选择排序”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “sort”,&lt;br&gt;]&lt;br&gt;date = “2016-10-14 14:00:00 +0800”&lt;br&gt;categories = [&lt;br&gt;  “algorithms”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h3 id=&quot;选择排序原理&quot;&gt;&lt;a href=&quot;#选择排序原理&quot; class=&quot;headerlink&quot; title=&quot;选择排序原理&quot;&gt;&lt;/a&gt;选择排序原理&lt;/h3&gt;&lt;p&gt;选择排序思想就是遍历找出最小值或者最大值后维护有序序列，从第一个元素开始依次往后找到最小或者最大元素，然后与第一个元素交换，&lt;br&gt;然后从第二个元素开始依次往复直到倒数第二个元素找出最小数，时间复杂度O(n^2)。&lt;img src=&quot;https://olef5l6y5.qnssl.com/select_sort.gif&quot; alt&gt; &lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="/2019/11/27/2016-08-01-nginx_logs_account/"/>
-    <id>/2019/11/27/2016-08-01-nginx_logs_account/</id>
-    <published>2019-11-27T03:16:16.000Z</published>
-    <updated>2019-11-27T03:16:16.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;+++&lt;br&gt;title = “通过账号密码查看Nginx日志”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “nginx”,&lt;br&gt;]&lt;br&gt;date = “2016-08-01”&lt;br&gt;categories = [&lt;br&gt;  “net”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;修改虚拟主机配置文件&quot;&gt;&lt;a href=&quot;#修改虚拟主机配置文件&quot; class=&quot;headerlink&quot; title=&quot;修改虚拟主机配置文件&quot;&gt;&lt;/a&gt;修改虚拟主机配置文件&lt;/h4&gt;&lt;p&gt;在server中添加如下代码&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ vim /usr/local/nginx/nginx.conf
-
-server{
-
-   location /logs {
-
-      alias /usr/local/nginx/logs;
-      autoindex on;
-
-      autoindex_exact_size off;
-
-      autoindex_localtime on;
-      add_header Cache-Control no-store;
-
-      auth_basic &amp;quot;Restricted&amp;quot;;
-      auth_basic_user_file /usr/local/nginx/conf/loguser;
-   }
-}
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>常见web服务攻击和防御手段</title>
@@ -211,180 +158,15 @@ server{
   
   <entry>
     <title></title>
-    <link href="/2019/09/17/2016-07-2-open_markdown_pad/"/>
-    <id>/2019/09/17/2016-07-2-open_markdown_pad/</id>
-    <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;+++&lt;br&gt;title = “Hexo新建Markdown自动打开编辑器”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “hexo”,&lt;br&gt;    “markdown”,&lt;br&gt;]&lt;br&gt;date = “2016-07-28”&lt;br&gt;categories = [&lt;br&gt;    “blog”,&lt;br&gt;     “vps”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;添加js脚本&quot;&gt;&lt;a href=&quot;#添加js脚本&quot; class=&quot;headerlink&quot; title=&quot;添加js脚本&quot;&gt;&lt;/a&gt;添加js脚本&lt;/h4&gt;&lt;p&gt;在站点目录下新建一个js，内容如下：  &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var exec = require(&amp;#39;child_process&amp;#39;).exec;
-
-hexo.on(&amp;#39;new&amp;#39;, function(data){
-  exec(&amp;#39;start  &amp;quot;D:\dev\editor\MarkdownPad2\MarkdownPad2.exe&amp;quot; &amp;#39; + data.path);
-});
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="/2019/09/17/2016-07-24-ssl_nginx/"/>
-    <id>/2019/09/17/2016-07-24-ssl_nginx/</id>
-    <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;+++&lt;br&gt;title = “Nginx配置ssl模块”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “nginx”,&lt;br&gt;    “ssl”&lt;br&gt;]&lt;br&gt;date = “2016-07-24”&lt;br&gt;categories = [&lt;br&gt;  “net”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;什么是HTTPS？&quot;&gt;&lt;a href=&quot;#什么是HTTPS？&quot; class=&quot;headerlink&quot; title=&quot;什么是HTTPS？&quot;&gt;&lt;/a&gt;什么是HTTPS？&lt;/h4&gt;&lt;p&gt;根据维基百科的解释：&lt;/p&gt;
-&lt;p&gt;超文本传输安全协议（缩写：HTTPS，英语：Hypertext Transfer Protocol Secure）是超文本传输协议和SSL/TLS的组合，用以提供加密通讯及对网络服务器身份的鉴定。&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="/2019/09/17/2016-07-24-start_hexo/"/>
-    <id>/2019/09/17/2016-07-24-start_hexo/</id>
-    <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;+++&lt;br&gt;title = “安装和配置Hexo”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “hexo”,&lt;br&gt;]&lt;br&gt;date = “2016-07-24”&lt;br&gt;categories = [&lt;br&gt;  “vps”,&lt;br&gt;  “blog”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;Hexo&quot;&gt;&lt;a href=&quot;#Hexo&quot; class=&quot;headerlink&quot; title=&quot;Hexo&quot;&gt;&lt;/a&gt;Hexo&lt;/h4&gt;&lt;p&gt;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="/2019/09/17/2016-07-31-nginx_lua/"/>
-    <id>/2019/09/17/2016-07-31-nginx_lua/</id>
-    <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;+++&lt;br&gt;title = “nginx lua环境搭建”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “lua”,&lt;br&gt;    “nginx”,&lt;br&gt;]&lt;br&gt;date = “2016-07-31”&lt;br&gt;categories = [&lt;br&gt;  “vps”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;安装nginx及搭建本地测试环境&quot;&gt;&lt;a href=&quot;#安装nginx及搭建本地测试环境&quot; class=&quot;headerlink&quot; title=&quot;安装nginx及搭建本地测试环境&quot;&gt;&lt;/a&gt;安装nginx及搭建本地测试环境&lt;/h4&gt;&lt;p&gt;下载最新版的nginx  &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;$ cd /usr/local/src 
-$ wget http://nginx.org/download/nginx-1.11.3.tar.gz
-$ tar -zxvf nginx-1.11.3.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="/2019/09/17/2016-08-1-springboot_scheduling/"/>
-    <id>/2019/09/17/2016-08-1-springboot_scheduling/</id>
-    <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;+++&lt;br&gt;title = “Spring Boot配置定时任务以及注册启动类”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “springboot”,&lt;br&gt;]&lt;br&gt;date = “2016-08-14”&lt;br&gt;categories = [&lt;br&gt;  “java”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;配置Spring-Boot定时任务&quot;&gt;&lt;a href=&quot;#配置Spring-Boot定时任务&quot; class=&quot;headerlink&quot; title=&quot;配置Spring Boot定时任务&quot;&gt;&lt;/a&gt;配置Spring Boot定时任务&lt;/h4&gt;&lt;p&gt;在Spring Boot启动方法上加上&lt;code&gt;@EnableScheduling&lt;/code&gt;开启定时任务&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="/2019/09/17/2016-08-04-spring_transaction/"/>
-    <id>/2019/09/17/2016-08-04-spring_transaction/</id>
-    <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;+++&lt;br&gt;title = “开启Spring事务机制”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “Transaction”,&lt;br&gt;]&lt;br&gt;date = “2016-08-04”&lt;br&gt;categories = [&lt;br&gt;  “SpringBoot”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;什么是事务？&quot;&gt;&lt;a href=&quot;#什么是事务？&quot; class=&quot;headerlink&quot; title=&quot;什么是事务？&quot;&gt;&lt;/a&gt;什么是事务？&lt;/h4&gt;&lt;p&gt;在企业级开发过程中，对于与无人员来说一个实际的对数据库的操作可能是多步结合进行的。&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="/2019/09/17/2016-10-14-rest_framework_analyse/"/>
-    <id>/2019/09/17/2016-10-14-rest_framework_analyse/</id>
-    <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;+++&lt;br&gt;title = “公司Rest架构启动过程分析”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “rest”,&lt;br&gt;]&lt;br&gt;date = “2016-10-14”&lt;br&gt;categories = [&lt;br&gt;  “framework”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;什么是REST&quot;&gt;&lt;a href=&quot;#什么是REST&quot; class=&quot;headerlink&quot; title=&quot;什么是REST&quot;&gt;&lt;/a&gt;什么是REST&lt;/h4&gt;&lt;p&gt;具象状态传输（英文：Representational State Transfer，简称REST），是Roy Thomas Fielding博士与2000年在他的博士论文 “Architectural Styles and the Design of Network-based Software Architectures” 中提出来的一种万维网软件架构风格。&lt;/p&gt;
-&lt;p&gt;REST相对于传统的SOAP到底有哪些不同，或者说两者分别更适合运用于什么样的场景。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="/2019/09/17/2016-08-05-problem_hibernate_session/"/>
-    <id>/2019/09/17/2016-08-05-problem_hibernate_session/</id>
-    <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;+++&lt;br&gt;title = “使用Spring事务时遇到的Session问题”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “session”,&lt;br&gt;    “springboot”,&lt;br&gt;]&lt;br&gt;date = “2016-08-05”&lt;br&gt;categories = [&lt;br&gt;  “java”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h4&gt;&lt;p&gt;当开启事务时，我们需要更新一个表对象数据时，可能我们并没有所有的表对象的数据，这时我们需要先查看他的原始数据，然后更新数据到我们重新封装的实例对象中去。这时如果我们直接去save()或者update()这个对象就回报这样的错。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="/2019/09/17/2017-04-0-precompile_lua_module/"/>
-    <id>/2019/09/17/2017-04-0-precompile_lua_module/</id>
-    <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;+++&lt;br&gt;title = “nginx lua预编译”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “nginx”,&lt;br&gt;    “lua”,&lt;br&gt;]&lt;br&gt;date = “2017-04-05”&lt;br&gt;categories = [&lt;br&gt;  “vps”,&lt;br&gt;  “blog”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;前景提要&quot;&gt;&lt;a href=&quot;#前景提要&quot; class=&quot;headerlink&quot; title=&quot;前景提要&quot;&gt;&lt;/a&gt;前景提要&lt;/h4&gt;&lt;p&gt;前段时间nginx新版1.11.11更新之后&lt;code&gt;nginx_http_connection_t&lt;/code&gt;结构体中的&lt;code&gt;ngx_buf_t **busy&lt;/code&gt;从二级指针改为了&lt;code&gt;ngx_chain_t *busy&lt;/code&gt;链表。&lt;br&gt;如何修改见&lt;a href=&quot;https://sunsblog.cn/2017/03/24/buildNewNginxError/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;之前的blog&lt;/a&gt;。     &lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
     <link href="/2019/09/17/2017-07-10-qiniu_upload/"/>
     <id>/2019/09/17/2017-07-10-qiniu_upload/</id>
     <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
+    <updated>2020-01-03T09:18:15.525Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;+++&lt;br&gt;title = “七牛文件上传”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “qiniu”,&lt;br&gt;]&lt;br&gt;date = “2017-07-10”&lt;br&gt;categories = [&lt;br&gt;  “net”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;基本的环境搭建&quot;&gt;&lt;a href=&quot;#基本的环境搭建&quot; class=&quot;headerlink&quot; title=&quot;基本的环境搭建&quot;&gt;&lt;/a&gt;基本的环境搭建&lt;/h4&gt;&lt;p&gt;  这里使用的是七牛的Java sdk，框架用的是spring boot，至于spring boot的基本框架搭建就不说了。&lt;br&gt;maven引入依赖&lt;/p&gt;
+      &lt;p&gt;–&lt;br&gt;title: “七牛文件上传”&lt;br&gt;description: “”&lt;br&gt;tags: [&lt;br&gt;    “qiniu”,&lt;br&gt;]&lt;br&gt;date: “2017-07-10”&lt;br&gt;categories: [&lt;br&gt;  “net”,&lt;/p&gt;
+&lt;h2 id&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;]&quot;&gt;&lt;/a&gt;]&lt;/h2&gt;&lt;h4 id=&quot;基本的环境搭建&quot;&gt;&lt;a href=&quot;#基本的环境搭建&quot; class=&quot;headerlink&quot; title=&quot;基本的环境搭建&quot;&gt;&lt;/a&gt;基本的环境搭建&lt;/h4&gt;&lt;p&gt;  这里使用的是七牛的Java sdk，框架用的是spring boot，至于spring boot的基本框架搭建就不说了。&lt;br&gt;maven引入依赖&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
     &amp;lt;groupId&amp;gt;com.qiniu&amp;lt;/groupId&amp;gt;
     &amp;lt;artifactId&amp;gt;qiniu-java-sdk&amp;lt;/artifactId&amp;gt;
@@ -399,15 +181,16 @@ $ tar -zxvf nginx-1.11.3.tar.gz
   
   <entry>
     <title></title>
-    <link href="/2019/09/17/2017-09-25-start_golang/"/>
-    <id>/2019/09/17/2017-09-25-start_golang/</id>
+    <link href="/2019/09/17/2018-02-01-win_ics/"/>
+    <id>/2019/09/17/2018-02-01-win_ics/</id>
     <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
+    <updated>2020-01-03T09:18:15.534Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;+++&lt;br&gt;title = “Go项目实战总结”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “golang”,&lt;br&gt;]&lt;br&gt;date = “2017-09-25”&lt;br&gt;categories = [&lt;br&gt;  “golang”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h3 id=&quot;GOPATH&quot;&gt;&lt;a href=&quot;#GOPATH&quot; class=&quot;headerlink&quot; title=&quot;GOPATH&quot;&gt;&lt;/a&gt;GOPATH&lt;/h3&gt;&lt;p&gt;go get、go install等命令都会用到gopath，gopath告诉go命令和和其他相关工具到哪找安装在你系统上的go包。  &lt;/p&gt;
+      &lt;hr&gt;
+&lt;p&gt;title: “windows ICS”&lt;br&gt;description: “”&lt;br&gt;tags: [&lt;br&gt;    “windows”,&lt;br&gt;]&lt;br&gt;date: “2018-02-01”&lt;br&gt;categories: [&lt;br&gt;  “system”,&lt;/p&gt;
+&lt;h2 id&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;]&quot;&gt;&lt;/a&gt;]&lt;/h2&gt;&lt;h3 id=&quot;什么是windows-ICS&quot;&gt;&lt;a href=&quot;#什么是windows-ICS&quot; class=&quot;headerlink&quot; title=&quot;什么是windows ICS&quot;&gt;&lt;/a&gt;什么是windows ICS&lt;/h3&gt;&lt;p&gt;全称windows internet connect sharing,用于在电脑两个网卡之间共享网络，让windows主机成实现一个&lt;br&gt;简单的路由功能。&lt;/p&gt;
     
     </summary>
     
@@ -416,18 +199,264 @@ $ tar -zxvf nginx-1.11.3.tar.gz
   
   <entry>
     <title></title>
-    <link href="/2019/09/17/2018-02-01-ubuntu_nat/"/>
-    <id>/2019/09/17/2018-02-01-ubuntu_nat/</id>
+    <link href="/2019/09/17/2018-10-09-sputnik/"/>
+    <id>/2019/09/17/2018-10-09-sputnik/</id>
     <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
+    <updated>2020-01-03T09:21:01.768Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;+++&lt;br&gt;title = “ubuntu nat”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “ubuntu”,&lt;br&gt;]&lt;br&gt;date = “2018-02-01”&lt;br&gt;categories = [&lt;br&gt;  “system”,&lt;br&gt;  “net”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h3 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h3&gt;&lt;p&gt;公司iBox（ubuntu 16.04系统）需要与机床连接实现实现业务，iBox本身只有两个网口，需要一个口连接厂房内网路由，一个口与机床直连，机床本身需要能够连接外网。&lt;br&gt;这时候就需要iBox实现nat转发并实现路由功能。&lt;/p&gt;
+      &lt;hr&gt;
+&lt;p&gt;title: “互联网编年史-sputnik”&lt;br&gt;description: “互联网编年史-sputnik”&lt;br&gt;tags: [&lt;br&gt;    “sputnik”,&lt;br&gt;]&lt;br&gt;date: “2018-10-09”&lt;br&gt;categories: [&lt;br&gt;  “net”,&lt;/p&gt;
+&lt;h2 id&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;]&quot;&gt;&lt;/a&gt;]&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;第一颗人造卫星的发射成功，直接导致了冷战时期美俄两国的太空竞赛&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;emsp;1957年苏联发射了人类第一颗人造卫星”Sputnik”。&lt;/p&gt;
+&lt;p&gt;&amp;emsp;在Sputnik进入太空之后的60年间，人造卫星在&lt;code&gt;科学、军事和民生&lt;/code&gt;等各个方面都获得了极其广泛的应用，对人类&lt;code&gt;通讯方式带来了颠覆性的影响，揭开并深化了冷战，催生了互联网&lt;/code&gt;，&lt;br&gt;进而彻底改变了人们认识自我、观看世界的方式。&lt;br&gt;&lt;img src=&quot;https://olef5l6y5.qnssl.com/sptnik.png&quot; alt&gt;&lt;/p&gt;
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>git workflow</title>
+    <link href="/2018/08/21/2018-08-21-git_workflow/"/>
+    <id>/2018/08/21/2018-08-21-git_workflow/</id>
+    <published>2018-08-21T09:30:00.000Z</published>
+    <updated>2019-09-16T19:20:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Git与SVN的比较&quot;&gt;&lt;a href=&quot;#Git与SVN的比较&quot; class=&quot;headerlink&quot; title=&quot;Git与SVN的比较&quot;&gt;&lt;/a&gt;Git与SVN的比较&lt;/h3&gt;&lt;h4 id=&quot;原理上&quot;&gt;&lt;a href=&quot;#原理上&quot; class=&quot;headerlink&quot; title=&quot;原理上&quot;&gt;&lt;/a&gt;原理上&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Git直接记录文件快照，SVN每次提交记录哪些文件更新更新了哪些行&lt;/li&gt;
+&lt;li&gt;Git有本地仓库，SVN没有本地仓库&lt;/li&gt;
+&lt;li&gt;Git大多数是本地操作，SVN大多数操作需要联网&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;操作上&quot;&gt;&lt;a href=&quot;#操作上&quot; class=&quot;headerlink&quot; title=&quot;操作上&quot;&gt;&lt;/a&gt;操作上&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Git先提交到本地仓库然后推送到远程仓库，SVN直接推送到远程仓库&lt;/li&gt;
+&lt;li&gt;Git有各种”反悔”指令，SVN没有&lt;/li&gt;
+&lt;li&gt;Git有真正的branch，而SVN只是工作空间的副本&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="vcs" scheme="/categories/vcs/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于TCP那些事（二）</title>
+    <link href="/2018/08/20/2018-08-20-something_about_tcp2/"/>
+    <id>/2018/08/20/2018-08-20-something_about_tcp2/</id>
+    <published>2018-08-19T17:20:00.000Z</published>
+    <updated>2020-01-03T09:21:01.765Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;TCP重传机制&quot;&gt;&lt;a href=&quot;#TCP重传机制&quot; class=&quot;headerlink&quot; title=&quot;TCP重传机制&quot;&gt;&lt;/a&gt;TCP重传机制&lt;/h3&gt;&lt;p&gt;TCP确认机制属于累积确认，接收端给发送端的Ack确认只会确认最后一个连续的包，&lt;strong&gt;SeqNum和Ack是以字节数为单位，所以ack的时候，不能跳着确认，只能确认最大的连续收到的包，&lt;br&gt;不然发送端就以为之前的都收到了&lt;/strong&gt;。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="net" scheme="/categories/net/"/>
+    
+    
+      <category term="tcp" scheme="/tags/tcp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于TCP那些事（一）</title>
+    <link href="/2018/08/19/2018-08-19-something_about_tcp1/"/>
+    <id>/2018/08/19/2018-08-19-something_about_tcp1/</id>
+    <published>2018-08-19T15:20:00.000Z</published>
+    <updated>2020-01-03T09:21:01.761Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;TCP头格式&quot;&gt;&lt;a href=&quot;#TCP头格式&quot; class=&quot;headerlink&quot; title=&quot;TCP头格式&quot;&gt;&lt;/a&gt;TCP头格式&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://olef5l6y5.qnssl.com/tcp_head.png&quot; alt&gt;&lt;br&gt;&lt;img src=&quot;https://olef5l6y5.qnssl.com/tcp_options.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;需要注意的几点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TCP包没有IP地址，那是IP层的事。只有源端口和目标端口。&lt;/li&gt;
+&lt;li&gt;一个TCP连接需要四个元组来表示是同一个连接（src_ip, src_port, dst_ip, dst_port）准确说是五元组，还有一个是协议。但因为这里只是说TCP协议，所以，这里我只说四元组。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sequence Number&lt;/strong&gt;是包的序号，用来解决网络包乱序（reordering）问题。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Acknowledgement Number&lt;/strong&gt;就是ACK——用于确认收到，用来解决不丢包的问题。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Window又叫Advertised-Window&lt;/strong&gt;，也就是著名的滑动窗口（Sliding Window），&lt;strong&gt;用于解决流控&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TCP Flag&lt;/strong&gt;，包类型，&lt;strong&gt;用于控制TCP状态机&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="net" scheme="/categories/net/"/>
+    
+    
+      <category term="tcp" scheme="/tags/tcp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>突破算法之-排列组合</title>
+    <link href="/2018/08/19/2018-08-19-permutation_algorithms/"/>
+    <id>/2018/08/19/2018-08-19-permutation_algorithms/</id>
+    <published>2018-08-18T18:00:00.000Z</published>
+    <updated>2020-01-03T09:18:15.544Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;算法原理&quot;&gt;&lt;a href=&quot;#算法原理&quot; class=&quot;headerlink&quot; title=&quot;算法原理&quot;&gt;&lt;/a&gt;算法原理&lt;/h3&gt;&lt;p&gt;思路是开一个数组，其下标表示1到n个数，数组元素的值为1表示其下标代表的数被选中，为0则没选中。&lt;br&gt;首先初始化，将数组前m个元素置1，表示第一个组合为前m个数。然后从左到右扫描数组元素值的”10”组合，找到第一个”10”组合后将其变为&lt;br&gt;“01”组合，同时将其左边的所有”1”全部移动到数组的最左端。当第一个”1”移动到数组的m-n的位置，即n个”1”全部移动到最右端时，就得到了最后一个组合。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="algorithms" scheme="/categories/algorithms/"/>
+    
+    
+      <category term="permutation" scheme="/tags/permutation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>突破算法之-快速排序</title>
+    <link href="/2018/08/19/2018-08-1-quick_sort/"/>
+    <id>/2018/08/19/2018-08-1-quick_sort/</id>
+    <published>2018-08-18T17:30:00.000Z</published>
+    <updated>2020-01-03T09:18:15.495Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;算法原理&quot;&gt;&lt;a href=&quot;#算法原理&quot; class=&quot;headerlink&quot; title=&quot;算法原理&quot;&gt;&lt;/a&gt;算法原理&lt;/h3&gt;&lt;p&gt;快速排序是图灵奖得主&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%9D%B1%E5%B0%BC%C2%B7%E9%9C%8D%E7%88%BE&quot; target=&quot;_blank&quot;&gt;C.R.A. Hoare&lt;/a&gt;与1960年提出的一种&lt;br&gt;划分交换排序，它采用了一种分治策略。&lt;br&gt;分治法的基本思想是：将原问题分解为若干个规模更小但结构与原问题相似的子问题。递归地解这些子问题，然后将这些子问题的解组合为原问题的解。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="algorithms" scheme="/categories/algorithms/"/>
+    
+    
+      <category term="sort" scheme="/tags/sort/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>突破算法之-二分插入排序</title>
+    <link href="/2018/08/19/2018-08-19-binary_insertion_sort/"/>
+    <id>/2018/08/19/2018-08-19-binary_insertion_sort/</id>
+    <published>2018-08-18T16:00:00.000Z</published>
+    <updated>2019-09-16T19:12:42.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;二分插入排序原理&quot;&gt;&lt;a href=&quot;#二分插入排序原理&quot; class=&quot;headerlink&quot; title=&quot;二分插入排序原理&quot;&gt;&lt;/a&gt;二分插入排序原理&lt;/h3&gt;&lt;p&gt;二分法是对直接插入的改进，由直接插入排序的循环遍历找出插入点改为二分法找出插入点，时间复杂度O(nlogn)。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="algorithms" scheme="/categories/algorithms/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>突破算法之-希尔排序</title>
+    <link href="/2018/08/18/2018-08-18-shell_sort/"/>
+    <id>/2018/08/18/2018-08-18-shell_sort/</id>
+    <published>2018-08-18T12:24:00.000Z</published>
+    <updated>2020-01-03T09:18:15.502Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;算法要点&quot;&gt;&lt;a href=&quot;#算法要点&quot; class=&quot;headerlink&quot; title=&quot;算法要点&quot;&gt;&lt;/a&gt;算法要点&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;希尔(Shell)排序又称为缩小增量排序，它是一种插入排序。它是对直接插入排序算法的一种优化。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;该方法因DL．Shell于1959年提出而得名。&lt;/p&gt;
+&lt;h3 id=&quot;算法思想&quot;&gt;&lt;a href=&quot;#算法思想&quot; class=&quot;headerlink&quot; title=&quot;算法思想&quot;&gt;&lt;/a&gt;算法思想&lt;/h3&gt;&lt;p&gt;它的作法不是每次一个元素挨一个元素的比较。而是初期选用大跨步（增量较大）间隔比较，使记录跳跃式接近它的排序位置；&lt;br&gt;然后增量缩小；最后增量为 1 ，这样记录移动次数大大减少，提高排序效率。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="algorithms" scheme="/categories/algorithms/"/>
+    
+    
+      <category term="sort" scheme="/tags/sort/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>突破算法之-直接插入排序</title>
+    <link href="/2018/08/17/2018-08-17-insertion_sort/"/>
+    <id>/2018/08/17/2018-08-17-insertion_sort/</id>
+    <published>2018-08-17T06:30:00.000Z</published>
+    <updated>2019-09-17T13:15:48.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;直接插入排序原理&quot;&gt;&lt;a href=&quot;#直接插入排序原理&quot; class=&quot;headerlink&quot; title=&quot;直接插入排序原理&quot;&gt;&lt;/a&gt;直接插入排序原理&lt;/h3&gt;&lt;p&gt;插入排序与选择排序最大的不同在于维护有序列的方式不同： &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择排序通过从无序列中找出最大或最小值放在有序列尾，直到循环到最后一个元素整个数组有序  &lt;/li&gt;
+&lt;li&gt;插入排序是依次把无序列中元素从有序列尾开始比较插入第一个比它小的或者比它大的元素后面，直到循环到最后一个元素整个序列有序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://olef5l6y5.qnssl.com/insertion_sort.gif&quot; alt&gt;  &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="algorithms" scheme="/categories/algorithms/"/>
+    
+    
+      <category term="algorithms" scheme="/tags/algorithms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>突破算法之-冒泡排序</title>
+    <link href="/2018/08/17/2018-08-17-bubble_sort/"/>
+    <id>/2018/08/17/2018-08-17-bubble_sort/</id>
+    <published>2018-08-17T05:30:00.000Z</published>
+    <updated>2019-09-16T19:12:42.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;冒泡排序原理&quot;&gt;&lt;a href=&quot;#冒泡排序原理&quot; class=&quot;headerlink&quot; title=&quot;冒泡排序原理&quot;&gt;&lt;/a&gt;冒泡排序原理&lt;/h3&gt;&lt;p&gt;对数组内所有n个元素依次进行比较和交换位置，较大的元素往上浮较小的元素往下沉，外层进行n-1次循环后数组会从小到大排好序，&lt;br&gt;时间复杂度O(n^2)。&lt;img src=&quot;https://olef5l6y5.qnssl.com/bubble_sort.gif&quot; alt&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="algorithms" scheme="/categories/algorithms/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP幂等性</title>
+    <link href="/2018/07/16/2018-07-16-http_idempotence/"/>
+    <id>/2018/07/16/2018-07-16-http_idempotence/</id>
+    <published>2018-07-15T16:00:00.000Z</published>
+    <updated>2019-09-17T13:15:07.000Z</updated>
+    
+    <summary type="html">
+    
+      HTTP幂等性
+    
+    </summary>
+    
+      <category term="net" scheme="/categories/net/"/>
+    
+    
+      <category term="http" scheme="/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java 内存可见性与指令重排</title>
+    <link href="/2018/04/20/2018-04-20-java_volatile/"/>
+    <id>/2018/04/20/2018-04-20-java_volatile/</id>
+    <published>2018-04-19T16:00:00.000Z</published>
+    <updated>2019-09-17T13:18:10.000Z</updated>
+    
+    <summary type="html">
+    
+      Java 内存可见性与指令重排
+    
+    </summary>
+    
+      <category term="java" scheme="/categories/java/"/>
+    
+    
+      <category term="volatile" scheme="/tags/volatile/"/>
     
   </entry>
   
