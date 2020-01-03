@@ -125,12 +125,12 @@
     <link href="/2019/09/17/2018-04-12%20-mysql_clustered_index/"/>
     <id>/2019/09/17/2018-04-12 -mysql_clustered_index/</id>
     <published>2019-09-17T13:20:28.000Z</published>
-    <updated>2020-01-03T09:35:02.457Z</updated>
+    <updated>2020-01-03T09:55:50.309Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;title: “mysql clustered index”&lt;br&gt;description: “mysql聚集索引”&lt;br&gt;tags: “mysql”&lt;br&gt;date: “2018-04-12 00:00:00 +0800”&lt;/p&gt;
+&lt;p&gt;title: “mysql clustered index”&lt;br&gt;description: “mysql聚集索引”&lt;br&gt;tag: “mysql”&lt;br&gt;date: “2018-04-12 00:00:00 +0800”&lt;/p&gt;
 &lt;h2 id=&quot;categories-“db”&quot;&gt;&lt;a href=&quot;#categories-“db”&quot; class=&quot;headerlink&quot; title=&quot;categories: “db”&quot;&gt;&lt;/a&gt;categories: “db”&lt;/h2&gt;&lt;h3 id=&quot;mysql聚集索引的理解&quot;&gt;&lt;a href=&quot;#mysql聚集索引的理解&quot; class=&quot;headerlink&quot; title=&quot;mysql聚集索引的理解&quot;&gt;&lt;/a&gt;mysql聚集索引的理解&lt;/h3&gt;&lt;p&gt;InnoDB使用聚集索引存储数据，到底什么是聚集索引，聚集索引直接定义了表中数据的真实的物理存储顺序。&lt;strong&gt;聚集索引就像一个电话簿，按照姓氏排序，&lt;br&gt;并且电话号码紧跟着后面&lt;/strong&gt;。一个表有且只有一个聚集索引，默认主键作为聚集索引，没有主键则以第一个唯一非空键作为聚集索引，如果也没有则InnoDB&lt;br&gt;会生成一个隐藏id作为聚集索引。  &lt;/p&gt;
     
     </summary>
@@ -143,12 +143,12 @@
     <link href="/2019/09/17/2018-04-25-java_classloader/"/>
     <id>/2019/09/17/2018-04-25-java_classloader/</id>
     <published>2019-09-17T13:17:33.000Z</published>
-    <updated>2020-01-03T09:35:02.333Z</updated>
+    <updated>2020-01-03T09:55:50.150Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;title: “Java类加载器”&lt;br&gt;description: “Java类加载器”&lt;br&gt;tags: “classloader”&lt;br&gt;date: “2018-04-25 00:00:00 +0800”&lt;/p&gt;
+&lt;p&gt;layout: post&lt;br&gt;title: “Java类加载器”&lt;br&gt;description: “Java类加载器”&lt;br&gt;tag: “classloader”&lt;br&gt;date: “2018-04-25 00:00:00 +0800”&lt;/p&gt;
 &lt;h2 id=&quot;categories-“java”&quot;&gt;&lt;a href=&quot;#categories-“java”&quot; class=&quot;headerlink&quot; title=&quot;categories: “java”&quot;&gt;&lt;/a&gt;categories: “java”&lt;/h2&gt;&lt;h3 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h3&gt;&lt;p&gt;最初为了满足Java Applet的需要而被开发出来的，Java Applet 需要从远程下载Java类到浏览器执行，现在Web容器和OSGi中得到了广泛的使用。类加载器负责读取 Java 字节代码，并转换&lt;br&gt;成 java.lang.Class 类的实例。每个 java.lang.Class 实例用来表示一个Java类，通过 newInstance() 创建该类对象，newInstance()只能调用无参构造器。&lt;br&gt;
     
     </summary>
@@ -161,11 +161,11 @@
     <link href="/2019/09/17/2017-07-10-qiniu_upload/"/>
     <id>/2019/09/17/2017-07-10-qiniu_upload/</id>
     <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2020-01-03T09:27:40.014Z</updated>
+    <updated>2020-01-03T09:55:50.289Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;–&lt;br&gt;title: “七牛文件上传”&lt;br&gt;description: “”&lt;br&gt;tags: “qiniu”&lt;br&gt;date: “2017-07-10”&lt;/p&gt;
+      &lt;p&gt;–&lt;br&gt;layout: post&lt;br&gt;title: “七牛文件上传”&lt;br&gt;description: “”&lt;br&gt;tag: “qiniu”&lt;br&gt;date: “2017-07-10 00:00:00 +0800”&lt;/p&gt;
 &lt;h2 id=&quot;categories-“net”&quot;&gt;&lt;a href=&quot;#categories-“net”&quot; class=&quot;headerlink&quot; title=&quot;categories: “net”&quot;&gt;&lt;/a&gt;categories: “net”&lt;/h2&gt;&lt;h4 id=&quot;基本的环境搭建&quot;&gt;&lt;a href=&quot;#基本的环境搭建&quot; class=&quot;headerlink&quot; title=&quot;基本的环境搭建&quot;&gt;&lt;/a&gt;基本的环境搭建&lt;/h4&gt;&lt;p&gt;  这里使用的是七牛的Java sdk，框架用的是spring boot，至于spring boot的基本框架搭建就不说了。&lt;br&gt;maven引入依赖&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
     &amp;lt;groupId&amp;gt;com.qiniu&amp;lt;/groupId&amp;gt;
@@ -184,12 +184,12 @@
     <link href="/2019/09/17/2018-02-01-win_ics/"/>
     <id>/2019/09/17/2018-02-01-win_ics/</id>
     <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2020-01-03T09:35:48.594Z</updated>
+    <updated>2020-01-03T09:55:50.209Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;layout: post&lt;br&gt;title: “windows ICS”&lt;br&gt;description: “”&lt;br&gt;tags: “windows”&lt;br&gt;date: “2018-02-01”&lt;/p&gt;
+&lt;p&gt;layout: post&lt;br&gt;title: “windows ICS”&lt;br&gt;description: “”&lt;br&gt;tag: “windows”&lt;br&gt;date: “2018-02-01 00:00:00 +0800”&lt;/p&gt;
 &lt;h2 id=&quot;categories-“system”&quot;&gt;&lt;a href=&quot;#categories-“system”&quot; class=&quot;headerlink&quot; title=&quot;categories: “system”&quot;&gt;&lt;/a&gt;categories: “system”&lt;/h2&gt;&lt;h3 id=&quot;什么是windows-ICS&quot;&gt;&lt;a href=&quot;#什么是windows-ICS&quot; class=&quot;headerlink&quot; title=&quot;什么是windows ICS&quot;&gt;&lt;/a&gt;什么是windows ICS&lt;/h3&gt;&lt;p&gt;全称windows internet connect sharing,用于在电脑两个网卡之间共享网络，让windows主机成实现一个&lt;br&gt;简单的路由功能。&lt;/p&gt;
     
     </summary>
@@ -202,12 +202,12 @@
     <link href="/2019/09/17/2018-10-09-sputnik/"/>
     <id>/2019/09/17/2018-10-09-sputnik/</id>
     <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2020-01-03T09:27:40.026Z</updated>
+    <updated>2020-01-03T09:55:50.212Z</updated>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;title: “互联网编年史-sputnik”&lt;br&gt;description: “互联网编年史-sputnik”&lt;br&gt;tags: “sputnik”&lt;br&gt;date: “2018-10-09”&lt;/p&gt;
+&lt;p&gt;layout: post&lt;br&gt;title: “互联网编年史-sputnik”&lt;br&gt;description: “互联网编年史-sputnik”&lt;br&gt;tag: “sputnik”&lt;br&gt;date: “2018-10-09 00:00:00 +0800”&lt;/p&gt;
 &lt;h2 id=&quot;categories-“net”&quot;&gt;&lt;a href=&quot;#categories-“net”&quot; class=&quot;headerlink&quot; title=&quot;categories: “net”&quot;&gt;&lt;/a&gt;categories: “net”&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;第一颗人造卫星的发射成功，直接导致了冷战时期美俄两国的太空竞赛&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -253,7 +253,7 @@
     <link href="/2018/08/20/2018-08-20-something_about_tcp2/"/>
     <id>/2018/08/20/2018-08-20-something_about_tcp2/</id>
     <published>2018-08-19T17:20:00.000Z</published>
-    <updated>2020-01-03T09:27:40.019Z</updated>
+    <updated>2020-01-03T09:55:50.201Z</updated>
     
     <summary type="html">
     
@@ -273,7 +273,7 @@
     <link href="/2018/08/19/2018-08-19-something_about_tcp1/"/>
     <id>/2018/08/19/2018-08-19-something_about_tcp1/</id>
     <published>2018-08-19T15:20:00.000Z</published>
-    <updated>2020-01-03T09:27:40.000Z</updated>
+    <updated>2020-01-03T09:55:50.256Z</updated>
     
     <summary type="html">
     
@@ -302,7 +302,7 @@
     <link href="/2018/08/19/2018-08-19-permutation_algorithms/"/>
     <id>/2018/08/19/2018-08-19-permutation_algorithms/</id>
     <published>2018-08-18T18:00:00.000Z</published>
-    <updated>2020-01-03T09:27:40.030Z</updated>
+    <updated>2020-01-03T09:55:50.223Z</updated>
     
     <summary type="html">
     
@@ -322,7 +322,7 @@
     <link href="/2018/08/19/2018-08-1-quick_sort/"/>
     <id>/2018/08/19/2018-08-1-quick_sort/</id>
     <published>2018-08-18T17:30:00.000Z</published>
-    <updated>2020-01-03T09:27:39.996Z</updated>
+    <updated>2020-01-03T09:55:50.253Z</updated>
     
     <summary type="html">
     
@@ -360,7 +360,7 @@
     <link href="/2018/08/18/2018-08-18-shell_sort/"/>
     <id>/2018/08/18/2018-08-18-shell_sort/</id>
     <published>2018-08-18T12:24:00.000Z</published>
-    <updated>2020-01-03T09:27:40.006Z</updated>
+    <updated>2020-01-03T09:55:50.263Z</updated>
     
     <summary type="html">
     
@@ -384,7 +384,7 @@
     <link href="/2018/08/17/2018-08-17-insertion_sort/"/>
     <id>/2018/08/17/2018-08-17-insertion_sort/</id>
     <published>2018-08-17T06:30:00.000Z</published>
-    <updated>2020-01-03T09:35:02.364Z</updated>
+    <updated>2020-01-03T09:55:50.175Z</updated>
     
     <summary type="html">
     
@@ -427,7 +427,7 @@
     <link href="/2018/07/16/2018-07-16-http_idempotence/"/>
     <id>/2018/07/16/2018-07-16-http_idempotence/</id>
     <published>2018-07-15T16:00:00.000Z</published>
-    <updated>2020-01-03T09:35:02.448Z</updated>
+    <updated>2020-01-03T09:55:50.302Z</updated>
     
     <summary type="html">
     
@@ -443,22 +443,22 @@
   </entry>
   
   <entry>
-    <title>mysql8.0.11精简版</title>
-    <link href="/2018/04/20/2018-04-20-mysql_8011/"/>
-    <id>/2018/04/20/2018-04-20-mysql_8011/</id>
+    <title>Java 内存可见性与指令重排</title>
+    <link href="/2018/04/20/2018-04-20-java_volatile/"/>
+    <id>/2018/04/20/2018-04-20-java_volatile/</id>
     <published>2018-04-19T16:00:00.000Z</published>
-    <updated>2020-01-03T09:35:02.396Z</updated>
+    <updated>2020-01-03T09:55:50.165Z</updated>
     
     <summary type="html">
     
-      mysql8.0.11精简版
+      Java 内存可见性与指令重排
     
     </summary>
     
-      <category term="db" scheme="/categories/db/"/>
+      <category term="java" scheme="/categories/java/"/>
     
     
-      <category term="mysql" scheme="/tags/mysql/"/>
+      <category term="volatile" scheme="/tags/volatile/"/>
     
   </entry>
   

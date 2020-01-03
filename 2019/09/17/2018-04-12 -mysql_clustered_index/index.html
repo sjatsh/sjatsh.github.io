@@ -379,7 +379,7 @@
         
         <div class="entry-content">
           <hr>
-<p>title: “mysql clustered index”<br>description: “mysql聚集索引”<br>tags: “mysql”<br>date: “2018-04-12 00:00:00 +0800”</p>
+<p>title: “mysql clustered index”<br>description: “mysql聚集索引”<br>tag: “mysql”<br>date: “2018-04-12 00:00:00 +0800”</p>
 <h2 id="categories-“db”"><a href="#categories-“db”" class="headerlink" title="categories: “db”"></a>categories: “db”</h2><h3 id="mysql聚集索引的理解"><a href="#mysql聚集索引的理解" class="headerlink" title="mysql聚集索引的理解"></a>mysql聚集索引的理解</h3><p>InnoDB使用聚集索引存储数据，到底什么是聚集索引，聚集索引直接定义了表中数据的真实的物理存储顺序。<strong>聚集索引就像一个电话簿，按照姓氏排序，<br>并且电话号码紧跟着后面</strong>。一个表有且只有一个聚集索引，默认主键作为聚集索引，没有主键则以第一个唯一非空键作为聚集索引，如果也没有则InnoDB<br>会生成一个隐藏id作为聚集索引。  </p>
 <a id="more"></a>
 <p>注：聚集索引中的每个叶子节点包含<strong>主键值、事务ID、回滚指针(rollback pointer用于事务和MVCC)和余下的列</strong></p>
@@ -499,7 +499,7 @@
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -511,10 +511,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            // PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
