@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-01-03T02:14:29.016Z</updated>
+  <updated>2019-11-27T03:20:12.000Z</updated>
   <id>/</id>
   
   <author>
@@ -17,21 +17,16 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2020/01/03/hello-world/"/>
-    <id>/2020/01/03/hello-world/</id>
-    <published>2020-01-03T02:14:29.016Z</published>
-    <updated>2020-01-03T02:14:29.016Z</updated>
+    <title></title>
+    <link href="/2019/11/27/2016-10-14-select_sort/"/>
+    <id>/2019/11/27/2016-10-14-select_sort/</id>
+    <published>2019-11-27T03:20:12.000Z</published>
+    <updated>2019-11-27T03:20:12.000Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
+      &lt;p&gt;+++&lt;br&gt;title = “突破算法之-选择排序”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “sort”,&lt;br&gt;]&lt;br&gt;date = “2016-10-14 14:00:00 +0800”&lt;br&gt;categories = [&lt;br&gt;  “algorithms”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h3 id=&quot;选择排序原理&quot;&gt;&lt;a href=&quot;#选择排序原理&quot; class=&quot;headerlink&quot; title=&quot;选择排序原理&quot;&gt;&lt;/a&gt;选择排序原理&lt;/h3&gt;&lt;p&gt;选择排序思想就是遍历找出最小值或者最大值后维护有序序列，从第一个元素开始依次往后找到最小或者最大元素，然后与第一个元素交换，&lt;br&gt;然后从第二个元素开始依次往复直到倒数第二个元素找出最小数，时间复杂度O(n^2)。&lt;img src=&quot;https://olef5l6y5.qnssl.com/select_sort.gif&quot; alt&gt; &lt;/p&gt;
     
     </summary>
     
@@ -39,24 +34,400 @@
   </entry>
   
   <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-11-16T09:29:49.000Z</updated>
+    <title></title>
+    <link href="/2019/11/27/2016-08-01-nginx_logs_account/"/>
+    <id>/2019/11/27/2016-08-01-nginx_logs_account/</id>
+    <published>2019-11-27T03:16:16.000Z</published>
+    <updated>2019-11-27T03:16:16.000Z</updated>
     
     <summary type="html">
     
-      hexo-sakura主题使用教程
+      &lt;p&gt;+++&lt;br&gt;title = “通过账号密码查看Nginx日志”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “nginx”,&lt;br&gt;]&lt;br&gt;date = “2016-08-01”&lt;br&gt;categories = [&lt;br&gt;  “net”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;修改虚拟主机配置文件&quot;&gt;&lt;a href=&quot;#修改虚拟主机配置文件&quot; class=&quot;headerlink&quot; title=&quot;修改虚拟主机配置文件&quot;&gt;&lt;/a&gt;修改虚拟主机配置文件&lt;/h4&gt;&lt;p&gt;在server中添加如下代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ vim /usr/local/nginx/nginx.conf
+
+server{
+
+   location /logs {
+
+      alias /usr/local/nginx/logs;
+      autoindex on;
+
+      autoindex_exact_size off;
+
+      autoindex_localtime on;
+      add_header Cache-Control no-store;
+
+      auth_basic &amp;quot;Restricted&amp;quot;;
+      auth_basic_user_file /usr/local/nginx/conf/loguser;
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常见web服务攻击和防御手段</title>
+    <link href="/2019/11/04/2019-11-04-common_means_web_attack/"/>
+    <id>/2019/11/04/2019-11-04-common_means_web_attack/</id>
+    <published>2019-11-04T08:50:00.000Z</published>
+    <updated>2019-11-04T12:44:57.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;常见web服务攻击和防御手段&quot;&gt;&lt;a href=&quot;#常见web服务攻击和防御手段&quot; class=&quot;headerlink&quot; title=&quot;常见web服务攻击和防御手段&quot;&gt;&lt;/a&gt;常见web服务攻击和防御手段&lt;/h1&gt;&lt;h2 id=&quot;XSS跨站脚本攻击&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="network-security" scheme="/categories/network-security/"/>
     
     
       <category term="web" scheme="/tags/web/"/>
     
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+  </entry>
+  
+  <entry>
+    <title>Go源码阅读-私有库拉取问题</title>
+    <link href="/2019/10/29/2019-10-29-go-primary-repo/"/>
+    <id>/2019/10/29/2019-10-29-go-primary-repo/</id>
+    <published>2019-10-29T06:24:30.000Z</published>
+    <updated>2019-11-04T08:51:20.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;go-get拉取私有库报错&quot;&gt;&lt;a href=&quot;#go-get拉取私有库报错&quot; class=&quot;headerlink&quot; title=&quot;go get拉取私有库报错&quot;&gt;&lt;/a&gt;go get拉取私有库报错&lt;/h2&gt;&lt;h3 id=&quot;http拉取问题-gt-1-6&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="golang" scheme="/categories/golang/"/>
+    
+    
+      <category term="golang" scheme="/tags/golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rabin-Karp在golang中的实现</title>
+    <link href="/2019/09/26/2019-09-26-rabin-karp/"/>
+    <id>/2019/09/26/2019-09-26-rabin-karp/</id>
+    <published>2019-09-26T04:01:30.000Z</published>
+    <updated>2019-09-26T08:05:53.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;&lt;code&gt;Rabin-Karp&lt;/code&gt;字符串快速查找算法和&lt;code&gt;FNV
+        
+      
+    
+    </summary>
+    
+      <category term="golang" scheme="/categories/golang/"/>
+    
+    
+      <category term="golang" scheme="/tags/golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>go平滑重启选型和项目实践</title>
+    <link href="/2019/09/17/2019-09-17-graceful-reload/"/>
+    <id>/2019/09/17/2019-09-17-graceful-reload/</id>
+    <published>2019-09-17T13:38:00.000Z</published>
+    <updated>2019-10-21T12:14:07.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;什么是平滑重启&quot;&gt;&lt;a href=&quot;#什么是平滑重启&quot; class=&quot;headerlink&quot; title=&quot;什么是平滑重启&quot;&gt;&lt;/a&gt;什么是平滑重启&lt;/h2&gt;&lt;p&gt;当线上代码需要更新时,我们平时一般的做法需要先关闭服务然后再重启服务.
+        
+      
+    
+    </summary>
+    
+      <category term="golang" scheme="/categories/golang/"/>
+    
+    
+      <category term="golang" scheme="/tags/golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2018-04-12%20-mysql_clustered_index/"/>
+    <id>/2019/09/17/2018-04-12 -mysql_clustered_index/</id>
+    <published>2019-09-17T13:20:28.000Z</published>
+    <updated>2019-09-17T13:20:28.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;title: “mysql clustered index”&lt;br&gt;description: “mysql聚集索引”&lt;br&gt;tags: mysql&lt;br&gt;date: 2018-04-12 00:00:00 +0800&lt;/p&gt;
+&lt;h2 id=&quot;categories-db&quot;&gt;&lt;a href=&quot;#categories-db&quot; class=&quot;headerlink&quot; title=&quot;categories: db&quot;&gt;&lt;/a&gt;categories: db&lt;/h2&gt;&lt;h3 id=&quot;mysql聚集索引的理解&quot;&gt;&lt;a href=&quot;#mysql聚集索引的理解&quot; class=&quot;headerlink&quot; title=&quot;mysql聚集索引的理解&quot;&gt;&lt;/a&gt;mysql聚集索引的理解&lt;/h3&gt;&lt;p&gt;InnoDB使用聚集索引存储数据，到底什么是聚集索引，聚集索引直接定义了表中数据的真实的物理存储顺序。&lt;strong&gt;聚集索引就像一个电话簿，按照姓氏排序，&lt;br&gt;并且电话号码紧跟着后面&lt;/strong&gt;。一个表有且只有一个聚集索引，默认主键作为聚集索引，没有主键则以第一个唯一非空键作为聚集索引，如果也没有则InnoDB&lt;br&gt;会生成一个隐藏id作为聚集索引。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2018-04-25-java_classloader/"/>
+    <id>/2019/09/17/2018-04-25-java_classloader/</id>
+    <published>2019-09-17T13:17:33.000Z</published>
+    <updated>2019-09-17T13:17:33.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;title: “Java类加载器”&lt;br&gt;description: “Java类加载器”&lt;br&gt;tags: classloader&lt;br&gt;date: 2018-04-25 00:00:00 +0800&lt;/p&gt;
+&lt;h2 id=&quot;categories-java&quot;&gt;&lt;a href=&quot;#categories-java&quot; class=&quot;headerlink&quot; title=&quot;categories: java&quot;&gt;&lt;/a&gt;categories: java&lt;/h2&gt;&lt;h3 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h3&gt;&lt;p&gt;最初为了满足Java Applet的需要而被开发出来的，Java Applet 需要从远程下载Java类到浏览器执行，现在Web容器和OSGi中得到了广泛的使用。类加载器负责读取 Java 字节代码，并转换&lt;br&gt;成 java.lang.Class 类的实例。每个 java.lang.Class 实例用来表示一个Java类，通过 newInstance() 创建该类对象，newInstance()只能调用无参构造器。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2016-07-24-ssl_nginx/"/>
+    <id>/2019/09/17/2016-07-24-ssl_nginx/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “Nginx配置ssl模块”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “nginx”,&lt;br&gt;    “ssl”&lt;br&gt;]&lt;br&gt;date = “2016-07-24”&lt;br&gt;categories = [&lt;br&gt;  “net”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;什么是HTTPS？&quot;&gt;&lt;a href=&quot;#什么是HTTPS？&quot; class=&quot;headerlink&quot; title=&quot;什么是HTTPS？&quot;&gt;&lt;/a&gt;什么是HTTPS？&lt;/h4&gt;&lt;p&gt;根据维基百科的解释：&lt;/p&gt;
+&lt;p&gt;超文本传输安全协议（缩写：HTTPS，英语：Hypertext Transfer Protocol Secure）是超文本传输协议和SSL/TLS的组合，用以提供加密通讯及对网络服务器身份的鉴定。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2016-07-2-open_markdown_pad/"/>
+    <id>/2019/09/17/2016-07-2-open_markdown_pad/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “Hexo新建Markdown自动打开编辑器”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “hexo”,&lt;br&gt;    “markdown”,&lt;br&gt;]&lt;br&gt;date = “2016-07-28”&lt;br&gt;categories = [&lt;br&gt;    “blog”,&lt;br&gt;     “vps”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;添加js脚本&quot;&gt;&lt;a href=&quot;#添加js脚本&quot; class=&quot;headerlink&quot; title=&quot;添加js脚本&quot;&gt;&lt;/a&gt;添加js脚本&lt;/h4&gt;&lt;p&gt;在站点目录下新建一个js，内容如下：  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var exec = require(&amp;#39;child_process&amp;#39;).exec;
+
+hexo.on(&amp;#39;new&amp;#39;, function(data){
+  exec(&amp;#39;start  &amp;quot;D:\dev\editor\MarkdownPad2\MarkdownPad2.exe&amp;quot; &amp;#39; + data.path);
+});
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2016-07-24-start_hexo/"/>
+    <id>/2019/09/17/2016-07-24-start_hexo/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “安装和配置Hexo”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “hexo”,&lt;br&gt;]&lt;br&gt;date = “2016-07-24”&lt;br&gt;categories = [&lt;br&gt;  “vps”,&lt;br&gt;  “blog”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;Hexo&quot;&gt;&lt;a href=&quot;#Hexo&quot; class=&quot;headerlink&quot; title=&quot;Hexo&quot;&gt;&lt;/a&gt;Hexo&lt;/h4&gt;&lt;p&gt;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2016-08-1-springboot_scheduling/"/>
+    <id>/2019/09/17/2016-08-1-springboot_scheduling/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “Spring Boot配置定时任务以及注册启动类”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “springboot”,&lt;br&gt;]&lt;br&gt;date = “2016-08-14”&lt;br&gt;categories = [&lt;br&gt;  “java”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;配置Spring-Boot定时任务&quot;&gt;&lt;a href=&quot;#配置Spring-Boot定时任务&quot; class=&quot;headerlink&quot; title=&quot;配置Spring Boot定时任务&quot;&gt;&lt;/a&gt;配置Spring Boot定时任务&lt;/h4&gt;&lt;p&gt;在Spring Boot启动方法上加上&lt;code&gt;@EnableScheduling&lt;/code&gt;开启定时任务&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2016-08-05-problem_hibernate_session/"/>
+    <id>/2019/09/17/2016-08-05-problem_hibernate_session/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “使用Spring事务时遇到的Session问题”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “session”,&lt;br&gt;    “springboot”,&lt;br&gt;]&lt;br&gt;date = “2016-08-05”&lt;br&gt;categories = [&lt;br&gt;  “java”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h4&gt;&lt;p&gt;当开启事务时，我们需要更新一个表对象数据时，可能我们并没有所有的表对象的数据，这时我们需要先查看他的原始数据，然后更新数据到我们重新封装的实例对象中去。这时如果我们直接去save()或者update()这个对象就回报这样的错。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2016-08-04-spring_transaction/"/>
+    <id>/2019/09/17/2016-08-04-spring_transaction/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “开启Spring事务机制”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “Transaction”,&lt;br&gt;]&lt;br&gt;date = “2016-08-04”&lt;br&gt;categories = [&lt;br&gt;  “SpringBoot”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;什么是事务？&quot;&gt;&lt;a href=&quot;#什么是事务？&quot; class=&quot;headerlink&quot; title=&quot;什么是事务？&quot;&gt;&lt;/a&gt;什么是事务？&lt;/h4&gt;&lt;p&gt;在企业级开发过程中，对于与无人员来说一个实际的对数据库的操作可能是多步结合进行的。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2016-10-14-rest_framework_analyse/"/>
+    <id>/2019/09/17/2016-10-14-rest_framework_analyse/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “公司Rest架构启动过程分析”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “rest”,&lt;br&gt;]&lt;br&gt;date = “2016-10-14”&lt;br&gt;categories = [&lt;br&gt;  “framework”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;什么是REST&quot;&gt;&lt;a href=&quot;#什么是REST&quot; class=&quot;headerlink&quot; title=&quot;什么是REST&quot;&gt;&lt;/a&gt;什么是REST&lt;/h4&gt;&lt;p&gt;具象状态传输（英文：Representational State Transfer，简称REST），是Roy Thomas Fielding博士与2000年在他的博士论文 “Architectural Styles and the Design of Network-based Software Architectures” 中提出来的一种万维网软件架构风格。&lt;/p&gt;
+&lt;p&gt;REST相对于传统的SOAP到底有哪些不同，或者说两者分别更适合运用于什么样的场景。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2016-07-31-nginx_lua/"/>
+    <id>/2019/09/17/2016-07-31-nginx_lua/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “nginx lua环境搭建”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “lua”,&lt;br&gt;    “nginx”,&lt;br&gt;]&lt;br&gt;date = “2016-07-31”&lt;br&gt;categories = [&lt;br&gt;  “vps”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;安装nginx及搭建本地测试环境&quot;&gt;&lt;a href=&quot;#安装nginx及搭建本地测试环境&quot; class=&quot;headerlink&quot; title=&quot;安装nginx及搭建本地测试环境&quot;&gt;&lt;/a&gt;安装nginx及搭建本地测试环境&lt;/h4&gt;&lt;p&gt;下载最新版的nginx  &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;$ cd /usr/local/src 
+$ wget http://nginx.org/download/nginx-1.11.3.tar.gz
+$ tar -zxvf nginx-1.11.3.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2017-04-0-precompile_lua_module/"/>
+    <id>/2019/09/17/2017-04-0-precompile_lua_module/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “nginx lua预编译”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “nginx”,&lt;br&gt;    “lua”,&lt;br&gt;]&lt;br&gt;date = “2017-04-05”&lt;br&gt;categories = [&lt;br&gt;  “vps”,&lt;br&gt;  “blog”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;前景提要&quot;&gt;&lt;a href=&quot;#前景提要&quot; class=&quot;headerlink&quot; title=&quot;前景提要&quot;&gt;&lt;/a&gt;前景提要&lt;/h4&gt;&lt;p&gt;前段时间nginx新版1.11.11更新之后&lt;code&gt;nginx_http_connection_t&lt;/code&gt;结构体中的&lt;code&gt;ngx_buf_t **busy&lt;/code&gt;从二级指针改为了&lt;code&gt;ngx_chain_t *busy&lt;/code&gt;链表。&lt;br&gt;如何修改见&lt;a href=&quot;https://sunsblog.cn/2017/03/24/buildNewNginxError/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;之前的blog&lt;/a&gt;。     &lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2017-07-10-qiniu_upload/"/>
+    <id>/2019/09/17/2017-07-10-qiniu_upload/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “七牛文件上传”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “qiniu”,&lt;br&gt;]&lt;br&gt;date = “2017-07-10”&lt;br&gt;categories = [&lt;br&gt;  “net”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;基本的环境搭建&quot;&gt;&lt;a href=&quot;#基本的环境搭建&quot; class=&quot;headerlink&quot; title=&quot;基本的环境搭建&quot;&gt;&lt;/a&gt;基本的环境搭建&lt;/h4&gt;&lt;p&gt;  这里使用的是七牛的Java sdk，框架用的是spring boot，至于spring boot的基本框架搭建就不说了。&lt;br&gt;maven引入依赖&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;com.qiniu&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;qiniu-java-sdk&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;[7.0.0, 7.2.99]&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2017-09-25-start_golang/"/>
+    <id>/2019/09/17/2017-09-25-start_golang/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “Go项目实战总结”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “golang”,&lt;br&gt;]&lt;br&gt;date = “2017-09-25”&lt;br&gt;categories = [&lt;br&gt;  “golang”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h3 id=&quot;GOPATH&quot;&gt;&lt;a href=&quot;#GOPATH&quot; class=&quot;headerlink&quot; title=&quot;GOPATH&quot;&gt;&lt;/a&gt;GOPATH&lt;/h3&gt;&lt;p&gt;go get、go install等命令都会用到gopath，gopath告诉go命令和和其他相关工具到哪找安装在你系统上的go包。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2018-02-01-ubuntu_nat/"/>
+    <id>/2019/09/17/2018-02-01-ubuntu_nat/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “ubuntu nat”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “ubuntu”,&lt;br&gt;]&lt;br&gt;date = “2018-02-01”&lt;br&gt;categories = [&lt;br&gt;  “system”,&lt;br&gt;  “net”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h3 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h3&gt;&lt;p&gt;公司iBox（ubuntu 16.04系统）需要与机床连接实现实现业务，iBox本身只有两个网口，需要一个口连接厂房内网路由，一个口与机床直连，机床本身需要能够连接外网。&lt;br&gt;这时候就需要iBox实现nat转发并实现路由功能。&lt;/p&gt;
+    
+    </summary>
+    
     
   </entry>
   
