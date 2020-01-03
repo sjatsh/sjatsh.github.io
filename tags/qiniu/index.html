@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">SunJun</title>
+  <title itemprop="name">Tag: qiniu | SunJun</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -359,205 +359,70 @@
   </div>
 </header>
 
-      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+      
 <div class="pattern-center-blank"></div>
-
+<div class="pattern-center ">
+  <div class="pattern-attachment-img">
+    <img src="https://cdn.jsdelivr.net/gh/sjatsh/cdn@master/img/loader/orange.progress-bar-stripe-loader.svg" data-src="qiniu.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+  </div>
+  <header class="pattern-header ">
+    <h1 class="cat-title">qiniu</h1>
+  </header>
+</div>
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div class="toc"></div>
-        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
-        
-          <header class="entry-header">
-            <h1 class="entry-title"></h1>
-            <p class="entry-census">&nbsp;·&nbsp;2019-9-17&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
-
-            <hr>
-          </header>
-        
-        <div class="entry-content">
-          <p>–<br>layout: post<br>title: “七牛文件上传”<br>description: “”<br>tag: “qiniu”<br>date: “2017-07-10 00:00:00 +0800”</p>
-<h2 id="categories-“net”"><a href="#categories-“net”" class="headerlink" title="categories: “net”"></a>categories: “net”</h2><h4 id="基本的环境搭建"><a href="#基本的环境搭建" class="headerlink" title="基本的环境搭建"></a>基本的环境搭建</h4><p>  这里使用的是七牛的Java sdk，框架用的是spring boot，至于spring boot的基本框架搭建就不说了。<br>maven引入依赖</p>
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;com.qiniu&lt;/groupId&gt;
-    &lt;artifactId&gt;qiniu-java-sdk&lt;/artifactId&gt;
-    &lt;version&gt;[7.0.0, 7.2.99]&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre><a id="more"></a>
-<h4 id="上传token的获取"><a href="#上传token的获取" class="headerlink" title="上传token的获取"></a>上传token的获取</h4><pre><code>public String getUpToken(String appId){
-
-    StringMap map       = new StringMap();
-    StringMap putPolicy = new StringMap();
-
-    map.put(&quot;key&quot;, &quot;${key}&quot;);
-    map.put(&quot;hash&quot;, &quot;${hash}&quot;);
-    map.put(&quot;bucket&quot;, &quot;${bucket}&quot;);
-    map.put(&quot;fsize&quot;, &quot;${fsize}&quot;);
-    map.put(&quot;fname&quot;, &quot;${fname}&quot;);
-    map.put(&quot;appId&quot;, appId);
-
-    Auth auth = Auth.create(Constants.ACCESSS_KEY, Constants.SECRET_KEY);
-    //上传文件不能重复(0:相同文件覆盖;1:相同文件不会覆盖) 只有在设置了key时才会生效,默认相同文件相同key不会覆盖正确返回
-    putPolicy.put(&quot;insertOnly&quot;, 0);
-    //是否启用上传模式(1:启用;0:关闭)启用后 由回调的返回参数的key字段指定七牛中的资源名称
-    putPolicy.put(&quot;callbackFetchKey&quot;, 1);
-    //回调Content-Type
-    putPolicy.put(&quot;callbackBodyType&quot;, &quot;application/json&quot;);
-    //回调URL
-    putPolicy.put(&quot;callbackUrl&quot;, Constants.CALLBACK_URL);
-    //回调post请求体
-    putPolicy.put(&quot;callbackBody&quot;, Json.encode(map));
-
-    String uploadToken = auth.uploadToken(Constants.BUCKET, null, Constants.EXPIRES_1H, putPolicy);
-    return uploadToken;
-}
-</code></pre><p>代码中的<code>callbackBody</code>定义上传返回的变量和用户自定义的魔法变量。其中：<br>key：七牛存储空间中的资源名称，可以用户定义或者七牛自动生成一个随机的UUID<br>hash：文件的hash值<br>bucket：存储空间名称<br>fsize：文件大小<br>fname：文件名<br>appId：自定义变量<br><code>callbackFetchKey</code>：七牛通过回调的返回参数中的key来确定资源文件名称，用于自定义前缀</p>
-<p><img src="https://olef5l6y5.qnssl.com/blog/xQ0AAONdzlhN5s8U-ff4b40ac-5181-4644-9521-80727d177349" alt><br>这里的appId用于确定哪个业务线，实际项目中应该定义固定的appId，拿到上传Token就可以进行上传操作了。</p>
-<h4 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h4><pre><code>public Object callback(HttpServletRequest request) throws IOException{
-
-        String         line = &quot;&quot;;
-        StringBuilder  sb   = new StringBuilder();
-        BufferedReader br   = new BufferedReader(new InputStreamReader(request.getInputStream()));
-        while ((line = br.readLine()) != null){
-            sb.append(line);
-        }
-
-        String authorization = request.getHeader(&quot;Authorization&quot;);
-        String contentType   = request.getContentType();
-
-        Auth auth = Auth.create(Constants.ACCESSS_KEY, Constants.SECRET_KEY);
-        //七牛回调鉴权
-        boolean             isQiniuCallback = auth.isValidCallback(authorization, Constants.CALLBACK_URL, sb.toString().getBytes(), contentType);
-        Map&lt;String, Object&gt; returnMap       = Maps.newHashMap();
-
-        if (isQiniuCallback){
-
-            CallBackParam callBackParam = Json.decode(sb.toString(), CallBackParam.class);
-
-            String appId = callBackParam.getAppId();
-            String key   = callBackParam.getKey();
-
-            callBackParam.setKey(appId + &quot;/&quot; + key);
-            returnMap.put(&quot;key&quot;, appId + &quot;/&quot; + key);
-            returnMap.put(&quot;payload&quot;, callBackParam);
-
-        } else{
-
-            returnMap.put(&quot;success&quot;, false);
-
-        }
-        return returnMap;
-    }
-</code></pre><p>回调中获得appId以及七牛生成的key，我们将其组装起来以自定义前缀。  我们会看到之前设置的自定义变量<code>appId:blog</code>是在生成token的时候设置的，<br>上传完成后会返回给我们。可能有人会问，这里直接上传到七牛不就好了么，为什么还要写一个方法。其实原因很简单，从上面的生成token的方法中已经可<br>以看出我们设置了<code>callbackUrl</code>以及<code>callbackBody</code>来让七牛在上传完成的时候本来回调我们自己的接口，只有当我们自己的接口回调成功整个上传才<br>会成功，反之失败。而且通过回调我们可以知道我们什么时候上传完成，同时可以进行一系列的log、插表等操作来记录上传信息。<br><img src="https://olef5l6y5.qnssl.com/blog/7B0AAFxPM5lH5s8U-b432ca33-f78b-4648-b54b-56ca658c9656" alt></p>
-<h4 id="设置callbackFetchKey情况"><a href="#设置callbackFetchKey情况" class="headerlink" title="设置callbackFetchKey情况"></a>设置callbackFetchKey情况</h4><p><img src="https://olef5l6y5.qnssl.com/blog/qi0AAOjAXrzC6M8U-c0dd96ac-5bf5-4063-afab-444443605274" alt></p>
-<h4 id="未设置callbackFetchKey情况"><a href="#未设置callbackFetchKey情况" class="headerlink" title="未设置callbackFetchKey情况"></a>未设置callbackFetchKey情况</h4><p><img src="https://olef5l6y5.qnssl.com/blog/ZFsAAKtAPyKg6c8U-5378915c-6904-44b5-9e29-91539e734464" alt><br><img src="https://olef5l6y5.qnssl.com/blog/ZFsAAKXEBeuk6c8U-da6e85c9-ee98-49bf-977c-4935af027d52" alt><br>可以看到回参中有前缀但是七牛存储空间中是没有前缀的</p>
-<p>因为七牛回调需要调用我们本地的接口，可是我们没有公网ip所以使用的ngrok内网穿透来实现的，ngrok的安装我的博客没有写，可以参考我<br><a href="https://wangjun.me/2017/02/24/ngrok/" target="_blank" rel="noopener">同事的博客</a>。</p>
-
-        </div>
-        <!-- .entry-content -->
-        <div class="single-reward">
-          <div class="reward-open">赏
-            <div class="reward-main">
-              <ul class="reward-row">
-                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/sjatsh/cdn@master/img/custom/donate/AliPayQR.jpg"></li>
-                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/sjatsh/cdn@master/img/custom/donate/WeChanQR.jpg"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-        <footer class="post-footer">
-          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-          <div class="post-tags">
-          </div>
-          <div class="post-share">
-            <div class="social-share sharehidden share-component"></div>
-            <i class="iconfont show-share icon-forward"></i>
-          </div>
-        </footer><!-- .entry-footer -->
-      </article>
-      <!-- #post-## -->
-      <div class="toc" style="background: none;"></div>
-      <section class="post-squares nextprev">
-        
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2019/09/17/2018-04-25-java_classloader/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/sjatsh/cdn@master/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                </h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-        
-          
-            <div class="post-nepre half next">
-          
-            <a href="/2019/09/17/2018-02-01-win_ics/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/sjatsh/cdn@master/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
-              </div>
-              <span class="label">
-              Next Post</span>
-              <div class="info">
-                <h3>
-                </h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-      </section>
       
-<div id="vcomments"></div>
-<script>
-  window.onload = function(){
-      var valine = new Valine();
-      valine.init({
-        el: '#vcomments',
-        appId: "W2br0STjHiHafDG6Fbvovjhn-MdYXbMMI",
-        appKey: "m38UAS3AKSDaXdgflNM15znT",
-        path: window.location.pathname,
-        placeholder: "你是我一生只会遇见一次的惊喜 ..."
-      })
-  }
-</script>
-
-      <section class="author-profile">
-        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="" class="profile gravatar"><img src="" itemprop="image" alt="" height="70" width="70"></a>
-          <div class="meta">
-            <span class="title">Author</span>
-            <h3 itemprop="name">
-            <a href="" itemprop="url" rel="author"></a>
-            </h3>
-          </div>
+  <!-- 首页默认取最最新文章集 -->
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2017/07/10/2017-07-10-qiniu_upload/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
         </div>
-        <hr>
-        <p><i class="iconfont icon-write"></i></p>
-      </section>
-    </main><!-- #main -->
-  </div><!-- #primary -->
+        <img width="150" height="150" src="" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2017/07/10/2017-07-10-qiniu_upload/">
+    七牛文件上传</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2017-7-10</div>
+    <p>
+    </p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2017/07/10/2017-07-10-qiniu_upload/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+
+
+      <div class="clearer">
+      </div>
+    </main>
+    <!--  -->
+    
+  </div>
 </div>
-
-
-
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -569,10 +434,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            // PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
