@@ -211,24 +211,6 @@ server{
   
   <entry>
     <title></title>
-    <link href="/2019/09/17/2016-07-24-ssl_nginx/"/>
-    <id>/2019/09/17/2016-07-24-ssl_nginx/</id>
-    <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;+++&lt;br&gt;title = “Nginx配置ssl模块”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “nginx”,&lt;br&gt;    “ssl”&lt;br&gt;]&lt;br&gt;date = “2016-07-24”&lt;br&gt;categories = [&lt;br&gt;  “net”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;什么是HTTPS？&quot;&gt;&lt;a href=&quot;#什么是HTTPS？&quot; class=&quot;headerlink&quot; title=&quot;什么是HTTPS？&quot;&gt;&lt;/a&gt;什么是HTTPS？&lt;/h4&gt;&lt;p&gt;根据维基百科的解释：&lt;/p&gt;
-&lt;p&gt;超文本传输安全协议（缩写：HTTPS，英语：Hypertext Transfer Protocol Secure）是超文本传输协议和SSL/TLS的组合，用以提供加密通讯及对网络服务器身份的鉴定。&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
     <link href="/2019/09/17/2016-07-2-open_markdown_pad/"/>
     <id>/2019/09/17/2016-07-2-open_markdown_pad/</id>
     <published>2019-09-16T16:33:58.000Z</published>
@@ -244,6 +226,24 @@ hexo.on(&amp;#39;new&amp;#39;, function(data){
   exec(&amp;#39;start  &amp;quot;D:\dev\editor\MarkdownPad2\MarkdownPad2.exe&amp;quot; &amp;#39; + data.path);
 });
 &lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="/2019/09/17/2016-07-24-ssl_nginx/"/>
+    <id>/2019/09/17/2016-07-24-ssl_nginx/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “Nginx配置ssl模块”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “nginx”,&lt;br&gt;    “ssl”&lt;br&gt;]&lt;br&gt;date = “2016-07-24”&lt;br&gt;categories = [&lt;br&gt;  “net”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;什么是HTTPS？&quot;&gt;&lt;a href=&quot;#什么是HTTPS？&quot; class=&quot;headerlink&quot; title=&quot;什么是HTTPS？&quot;&gt;&lt;/a&gt;什么是HTTPS？&lt;/h4&gt;&lt;p&gt;根据维基百科的解释：&lt;/p&gt;
+&lt;p&gt;超文本传输安全协议（缩写：HTTPS，英语：Hypertext Transfer Protocol Secure）是超文本传输协议和SSL/TLS的组合，用以提供加密通讯及对网络服务器身份的鉴定。&lt;br&gt;
     
     </summary>
     
@@ -269,6 +269,27 @@ hexo.on(&amp;#39;new&amp;#39;, function(data){
   
   <entry>
     <title></title>
+    <link href="/2019/09/17/2016-07-31-nginx_lua/"/>
+    <id>/2019/09/17/2016-07-31-nginx_lua/</id>
+    <published>2019-09-16T16:33:58.000Z</published>
+    <updated>2019-09-16T16:33:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;+++&lt;br&gt;title = “nginx lua环境搭建”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “lua”,&lt;br&gt;    “nginx”,&lt;br&gt;]&lt;br&gt;date = “2016-07-31”&lt;br&gt;categories = [&lt;br&gt;  “vps”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;安装nginx及搭建本地测试环境&quot;&gt;&lt;a href=&quot;#安装nginx及搭建本地测试环境&quot; class=&quot;headerlink&quot; title=&quot;安装nginx及搭建本地测试环境&quot;&gt;&lt;/a&gt;安装nginx及搭建本地测试环境&lt;/h4&gt;&lt;p&gt;下载最新版的nginx  &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;$ cd /usr/local/src 
+$ wget http://nginx.org/download/nginx-1.11.3.tar.gz
+$ tar -zxvf nginx-1.11.3.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
     <link href="/2019/09/17/2016-08-1-springboot_scheduling/"/>
     <id>/2019/09/17/2016-08-1-springboot_scheduling/</id>
     <published>2019-09-16T16:33:58.000Z</published>
@@ -278,23 +299,6 @@ hexo.on(&amp;#39;new&amp;#39;, function(data){
     
       &lt;p&gt;+++&lt;br&gt;title = “Spring Boot配置定时任务以及注册启动类”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “springboot”,&lt;br&gt;]&lt;br&gt;date = “2016-08-14”&lt;br&gt;categories = [&lt;br&gt;  “java”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
 &lt;h4 id=&quot;配置Spring-Boot定时任务&quot;&gt;&lt;a href=&quot;#配置Spring-Boot定时任务&quot; class=&quot;headerlink&quot; title=&quot;配置Spring Boot定时任务&quot;&gt;&lt;/a&gt;配置Spring Boot定时任务&lt;/h4&gt;&lt;p&gt;在Spring Boot启动方法上加上&lt;code&gt;@EnableScheduling&lt;/code&gt;开启定时任务&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="/2019/09/17/2016-08-05-problem_hibernate_session/"/>
-    <id>/2019/09/17/2016-08-05-problem_hibernate_session/</id>
-    <published>2019-09-16T16:33:58.000Z</published>
-    <updated>2019-09-16T16:33:58.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;+++&lt;br&gt;title = “使用Spring事务时遇到的Session问题”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “session”,&lt;br&gt;    “springboot”,&lt;br&gt;]&lt;br&gt;date = “2016-08-05”&lt;br&gt;categories = [&lt;br&gt;  “java”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h4&gt;&lt;p&gt;当开启事务时，我们需要更新一个表对象数据时，可能我们并没有所有的表对象的数据，这时我们需要先查看他的原始数据，然后更新数据到我们重新封装的实例对象中去。这时如果我们直接去save()或者update()这个对象就回报这样的错。&lt;/p&gt;
     
     </summary>
     
@@ -338,19 +342,15 @@ hexo.on(&amp;#39;new&amp;#39;, function(data){
   
   <entry>
     <title></title>
-    <link href="/2019/09/17/2016-07-31-nginx_lua/"/>
-    <id>/2019/09/17/2016-07-31-nginx_lua/</id>
+    <link href="/2019/09/17/2016-08-05-problem_hibernate_session/"/>
+    <id>/2019/09/17/2016-08-05-problem_hibernate_session/</id>
     <published>2019-09-16T16:33:58.000Z</published>
     <updated>2019-09-16T16:33:58.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;+++&lt;br&gt;title = “nginx lua环境搭建”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “lua”,&lt;br&gt;    “nginx”,&lt;br&gt;]&lt;br&gt;date = “2016-07-31”&lt;br&gt;categories = [&lt;br&gt;  “vps”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
-&lt;h4 id=&quot;安装nginx及搭建本地测试环境&quot;&gt;&lt;a href=&quot;#安装nginx及搭建本地测试环境&quot; class=&quot;headerlink&quot; title=&quot;安装nginx及搭建本地测试环境&quot;&gt;&lt;/a&gt;安装nginx及搭建本地测试环境&lt;/h4&gt;&lt;p&gt;下载最新版的nginx  &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;$ cd /usr/local/src 
-$ wget http://nginx.org/download/nginx-1.11.3.tar.gz
-$ tar -zxvf nginx-1.11.3.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;p&gt;+++&lt;br&gt;title = “使用Spring事务时遇到的Session问题”&lt;br&gt;description = “”&lt;br&gt;tags = [&lt;br&gt;    “session”,&lt;br&gt;    “springboot”,&lt;br&gt;]&lt;br&gt;date = “2016-08-05”&lt;br&gt;categories = [&lt;br&gt;  “java”,&lt;br&gt;]&lt;br&gt;+++&lt;/p&gt;
+&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h4&gt;&lt;p&gt;当开启事务时，我们需要更新一个表对象数据时，可能我们并没有所有的表对象的数据，这时我们需要先查看他的原始数据，然后更新数据到我们重新封装的实例对象中去。这时如果我们直接去save()或者update()这个对象就回报这样的错。&lt;/p&gt;
     
     </summary>
     

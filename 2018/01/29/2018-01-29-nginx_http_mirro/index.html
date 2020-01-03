@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Nginx epoll事件驱动 | SunJun</title>
+  <title itemprop="name">nginx request copy | SunJun</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -371,45 +371,53 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
           <header class="entry-header">
-            <h1 class="entry-title">Nginx epoll事件驱动</h1>
-            <p class="entry-census">&nbsp;·&nbsp;2017-4-5&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
+            <h1 class="entry-title">nginx request copy</h1>
+            <p class="entry-census">&nbsp;·&nbsp;2018-1-29&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
 
             <hr>
           </header>
         
         <div class="entry-content">
-          <p>###Linux IO模式</p>
-<p>在了解Nginx事件驱动机制之前首先我们需要知道的是Linux的IO模式，之所以需要了解Linux的IO模式是应为Nginx正是通过它实现的”非阻塞IO”与高并发。  </p>
-<a id="more"></a> 
-<h4 id="Linux-IO模式及select、poll、epoll"><a href="#Linux-IO模式及select、poll、epoll" class="headerlink" title="Linux IO模式及select、poll、epoll"></a>Linux IO模式及select、poll、epoll</h4><p>同步IO和异步IO，阻塞IO和非阻塞IO分别是什么，到底有什么区别？在不通的场景下不同的人给出的答案是不同的，所以本文限定一下我们讨论的上下文环境。</p>
-<pre><code>本文讨论的背景前提是Linux环境下的network IO。
-</code></pre><h4 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h4><p>在这之前我们需要知道几个概念：  </p>
+          <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>目前公司前端项目的图片文件全部是通过请求后台获取token接口获取七牛上传token，然后前端直接上传七牛。这个机制本身不存在问题，问题在于<br>公司使用了一个第三方授权服务器，这个服务器需要下载拿到用户上传的图片。问题来了，这个服务器当初部署在内网，如果需要它访问到上传图片，需要<br>将文件在用户上传后再备份到一个我们自己的服务器。  </p>
+<a id="more"></a>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>首先就问题本身，我们能够给出以下几种方案：  </p>
 <ul>
-<li>用户空间和内核空间  </li>
-<li>进程间切换  </li>
-<li>进程的阻塞  </li>
-<li>文件描述符  </li>
-<li>缓存IO   </li>
+<li>上传时同时上传到我们自己的服务器   </li>
+<li>上传七牛后七牛自己回调我们的文件备份接口   </li>
+<li><p>上传后在七牛回调我们的接口时下载后再备份到服务器     </p>
+<p>首先看第一种，这种就是上传了两次文件，太浪费客户端流量和带宽，而且也不优雅。第二种想法如果可行的话当然是最好的方式，但是就目前来看七牛<br>貌似没有类似的接口。那么就只有第三种方式。</p>
+</li>
 </ul>
-<h5 id="用户空间与内核空间"><a href="#用户空间与内核空间" class="headerlink" title="用户空间与内核空间"></a>用户空间与内核空间</h5><p>现在操作系统都是采用虚拟存储器，那么对32位操作系统而言，它的寻址空间（虚拟存储空间）为4G（2的32次方）。操作系统的核心是内核，独立于普通的应用程<br>序，可以访问受保护的内存空间，也有访问底层硬件设备的所有权限。为了保证用户进程不能直接操作内核（kernel），保证内核的安全，操心系统将虚拟空间划<br>分为两部分，一部分为内核空间，一部分为用户空间。针对linux操作系统而言，将最高的1G字节（从虚拟地址0xC0000000到0xFFFFFFFF），供内核使用，称为<br>内核空间，而将较低的3G字节（从虚拟地址0x00000000到0xBFFFFFFF），供各个进程使用，称为用户空间。</p>
-<h5 id="进程间切换"><a href="#进程间切换" class="headerlink" title="进程间切换"></a>进程间切换</h5><p>为了控制进程的执行，内核必须有能力挂起正在CPU上运行的进程，并恢复以前挂起的某个进程的执行。这种行为被称为进程切换。因此可以说，任何进程都是在操<br>作系统内核的支持下运行的，是与内核紧密相关的。</p>
-<p>从一个进程的运行转到另一个进程上运行，这个过程中经过下面这些变化：  </p>
-<ol>
-<li>保存处理机上下文，包括程序计数器和其他寄存器。</li>
-<li>更新PCB信息。</li>
-<li>把进程的PCB移入相应的队列，如就绪、在某事件阻塞等队列。</li>
-<li>选择另一个进程执行，并更新其PCB。</li>
-<li>更新内存管理的数据结构。</li>
-<li>恢复处理机上下文。</li>
-</ol>
-<p>注：总而言之就是很耗资源，具体的可以参考这篇文章：<a href="http://guojing.me/linux-kernel-architecture/posts/process-switch/" target="_blank" rel="noopener">进程间切换</a></p>
-<h5 id="进程的阻塞"><a href="#进程的阻塞" class="headerlink" title="进程的阻塞"></a>进程的阻塞</h5><p>正在执行的进程，由于期待的某些事件未发生，如请求系统资源失败、等待某种操作的完成、新数据尚未到达或无新工作做等，则由系统自动执行阻塞原语(Block)<br>，使自己由运行状态变为阻塞状态。可见，进程的阻塞是进程自身的一种主动行为，也因此只有处于运行态的进程（获得CPU），才可能将其转为阻塞状态。<code>当进程
-进入阻塞状态，是不占用CPU资源的。</code></p>
-<h5 id="文件描述符fd"><a href="#文件描述符fd" class="headerlink" title="文件描述符fd"></a>文件描述符fd</h5><p>文件描述符（File descriptor）是计算机科学中的一个术语，是一个用于表述指向文件的引用的抽象化概念。</p>
-<p>文件描述符在形式上是一个非负整数。实际上，它是一个索引值，指向内核为每一个进程所维护的该进程打开文件的记录表。当程序打开一个现有文件或者创建一个<br>新文件时，内核向进程返回一个文件描述符。在程序设计中，一些涉及底层的程序编写往往会围绕着文件描述符展开。但是文件描述符这一概念往往只适用于UNIX、<br>Linux这样的操作系统。  </p>
-<h5 id="缓存IO"><a href="#缓存IO" class="headerlink" title="缓存IO"></a>缓存IO</h5><p>缓存 I/O 又被称作标准 I/O，大多数文件系统的默认 I/O 操作都是缓存 I/O。在 Linux 的缓存 I/O 机制中，操作系统会将 I/O 的数据缓存在文件系统的<br>页缓存（ page cache ）中，也就是说，数据会先被拷贝到操作系统内核的缓冲区中，然后才会从操作系统内核的缓冲区拷贝到应用程序的地址空间。  </p>
-<p><code>缓存 I/O 的缺点：</code><br>数据在传输过程中需要在应用程序地址空间和内核进行多次数据拷贝操作，这些数据拷贝操作所带来的 CPU 以及内存开销是非常大的。</p>
-<h4 id="二、IO模式"><a href="#二、IO模式" class="headerlink" title="二、IO模式"></a>二、IO模式</h4>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><p>通过七牛回调我们自己的接口再去备份，这里同样也有两种实现方式：  </p>
+<ul>
+<li>在回调接口中通过mq异步下载和备份文件  </li>
+<li>nginx中通过请求的拷贝|镜像请求实现将请求同时转给另一个专门用于处理文件备份的接口<br>从程序的解耦和整体架构上看可能nginx流量的拷贝|镜像更为理想，同时实现稍显复杂，同时需要与运维的同事进行沟通交流并进行nginx的配置调试。<br>直接通过原有接口mq异步备份文件也是一种实现方式，两者个人认为都是可行方案，如果条件允许的情况下建议第二种，毕竟程序员就是喜欢折腾-_-。<br>通过mq异步进行文件备份的方式没什么好说的，就是发mq消息，下载上传。本文重点，如何通过nginx进行请求的copy|镜像转发。  </li>
+</ul>
+<h4 id="post-action方式"><a href="#post-action方式" class="headerlink" title="post_action方式"></a>post_action方式</h4><pre><code>location / {
+    uwsgi_pass      unix:app.sock;
+    post_action     @post_action; 
+}
+
+location @post_action {
+    proxy_pass      http://dst_host:dst_port; 
+}
+</code></pre><p>这种方式请求首先传递给unix：app.sock，并在完成时，post_action指令将请求传递给指定位置的@post_action。但是这种方式@post_action中的<br>proxy_pass不能是uri，比如：<a href="http://ip:port/test;这种是不可以的。很可惜.." target="_blank" rel="noopener">http://ip:port/test;这种是不可以的。很可惜..</a>.</p>
+<h4 id="mirror-module"><a href="#mirror-module" class="headerlink" title="mirror_module"></a>mirror_module</h4><p>nginx1.13.4之后开始支持ngx_http_mirror_module模块，这是一个请求镜像转发模块，相信听名字就知道是干嘛的了，请求镜像拷贝转发呗。  </p>
+<pre><code># original配置
+location / {
+    mirror /mirror;
+    mirror_request_body off;
+    proxy_pass http://127.0.0.1:9502;
+}
+
+# mirror配置
+location /mirror {
+    internal;
+    proxy_pass http://127.0.0.1:8081$request_uri;
+    proxy_set_header X-Original-URI $request_uri;
+}
+</code></pre><p>参考<a href="https://www.centos.bz/2017/08/nginx-request-copy-ngx_http_mirror_module/" target="_blank" rel="noopener">https://www.centos.bz/2017/08/nginx-request-copy-ngx_http_mirror_module/</a></p>
+
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -440,7 +448,7 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2018/01/23/2018-01-23-go_java_signature_check/" rel="prev">
+            <a href="/2018/03/18/2018-03-18-let's_encrypt/" rel="prev">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/sjatsh/cdn@master/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
               </div>
@@ -448,7 +456,7 @@
               Previous Post</span>
               <div class="info">
                 <h3>
-                openpgp签名与验签</h3>
+                let&#39;s encrypt</h3>
                 <hr>
               </div>
             </a>
@@ -458,7 +466,7 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2017/03/24/2017-03-24-build_nginx_error/" rel="next">
+            <a href="/2018/01/23/2018-01-23-go_java_signature_check/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/sjatsh/cdn@master/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
               </div>
@@ -466,7 +474,7 @@
               Next Post</span>
               <div class="info">
                 <h3>
-                nginx-1.11.11模块编译报错解决</h3>
+                openpgp签名与验签</h3>
                 <hr>
               </div>
             </a>
